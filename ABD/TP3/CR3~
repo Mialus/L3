@@ -1,0 +1,55 @@
+Wargnier Pierre 
+TP2C 
+21/01 
+N°3
+
+version :
+mysql  Ver 14.14 Distrib 5.5.38, for debian-linux-gnu (x86_64) using readline 6.2
+psql (PostgreSQL) 9.4.0
+pgadmin : 1.2.0.0
+mysql-workbench : 5.2.40
+
+2) gestion des épreuves universitaires
+
+	2.1)
+		\i Etudiant_creation.sql
+		\d Notation
+	2.2)
+		1) ALTER TABLE Notation ADD CHECK (0 <= note AND note <= 20);
+		   INSERT INTO Epreuve VALUES (11131, '2003-12-15', 'Salle 191L', 'STA');
+		   INSERT INTO Notation VALUES (110, 11131, 32);
+		   INSERT INTO Notation VALUES (110, 11131, 12);
+
+		2) ALTER TABLE Etudiant ADD CONSTRAINT verif_cp CHECK (0 <= cp AND cp < 100000);
+		   INSERT INTO Etudiant VALUES (112, 'Dupont', 'Albert', '1980-06-01', 'Rue de Crimée', 1000697, 'Lyon');
+		   INSERT INTO Etudiant VALUES (112, 'Dupont', 'Albert', '1980-06-01', 'Rue de Crimée', 69001, 'Lyon');
+
+
+		3) ALTER TABLE Etudiant ADD CONSTRAINT verif_cp2 CHECK ((cp is NULL AND ville is NULL) OR (cp is NULL AND Ville is NOT NULL) OR (cp is NOT NULL AND ville is NOT NULL ));
+
+		   INSERT INTO Etudiant VALUES (113, 'Dupont', 'Albert', '1980-06-01', 'Rue de Crimée', 39000, NULL);
+		   INSERT INTO Etudiant VALUES (113, 'Dupont', 'Albert', '1980-06-01', 'Rue de Crimée',NULL,NULL);
+
+
+		4)ALTER TABLE Etudiant ADD CONSTRAINT verif_cp3 CHECK ((cp is NULL AND ville is NULL AND rue is NULL) OR (cp is NOT NULL AND ville is NOT NULL AND rue is NOT NULL) OR (cp is NOT NULL AND ville is NOT NULL AND rue is NULL) OR (cp is NULL AND ville is NOT NULL AND rue is  NOT NULL) OR (cp is NULL AND ville is NOT NULL AND rue is NULL));
+		
+
+		INSERT INTO Etudiant VALUES (113, 'Dupont', 'Albert', '1980-06-01', 'Rue de Crimée', NULL, NULL);
+		   INSERT INTO Etudiant VALUES (113, 'Dupont', 'Albert', '1980-06-01', NULL,NULL,NULL);
+
+		5)CREATE OR REPLACE FUNCTION majeur(numetu INT)
+		  RETURNS BOOLEAN AS
+		  $$
+
+		 Select numetu NOT IN (SELECT numetu FROM Etudiant WHERE age(datenaiss) < interval '18 year');
+		  $$ LANGUAGE SQL;
+
+
+		ALTER TABLE Notation ADD CONSTRAINT verif_age CHECK (majeur(numetu));
+
+		INSERT INTO Etudiant VALUES (113, 'Dupont', 'Albert', '2000-06-01', 'Rue de Crimée', 39000, NULL);
+		INSERT INTO Epreuve VALUES (31035, '2004-06-02', 'Salle 05R', 'ECO');
+
+		INSERT INTO Notation VALUES (113, 11035, 10);
+
+		

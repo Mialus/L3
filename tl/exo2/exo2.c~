@@ -1,0 +1,193 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct s_liste{
+	int state;
+	struct s_liste* suiv;
+} liste;
+
+typedef struct {
+	int size;
+	int sizealpha;
+	int* initial;
+	int* final;
+	liste*** trans;
+} automate;
+
+void ajouteListe(liste** l, int q)
+{
+	liste* ptl;
+	liste* tmp;
+	ptl=*l;
+	if(!ptl)
+	{
+		ptl=(liste*) malloc(sizeof(liste));
+		ptl->state=q;
+		ptl->suiv=NULL;
+		return;
+	}
+	if(ptl->state == q)
+	{ return;
+	}
+	if(q<ptl->state)
+	{
+		tmp=*l;
+		*l=(liste*) malloc(sizeof(liste));
+		(*l)->state=q;
+		(*l)->suiv=tmp;
+		return;
+	}
+
+	while(ptl->suiv && ptl->suiv->state<q)
+	{
+	ptl=ptl->suiv;
+	}
+	if(!ptl->suiv)
+	{
+		ptl->suiv=(liste*) malloc(sizeof(liste));
+		ptl=ptl->suiv;
+		ptl->state=q;
+		ptl->suiv=NULL;
+		return;
+	}
+	if(ptl->suiv->state==q){return;}
+	tmp=ptl->suiv;
+	ptl->suiv=(liste*) malloc(sizeof(liste));
+	ptl=ptl->suiv;
+	ptl->state=q;
+	ptl->suiv=tmp;
+}
+
+void afficheAutomate(automate* A){
+int i,j,valsize;
+automate* valsuiv;
+
+
+
+i=0;
+printf("les états initiaux : 0\n");
+printf("les états finaux : 1\n");
+printf("les transitions :\n");
+printf("---------------------------\n");
+
+while(i<A->size)
+{
+printf("Depuis l'etat %d\n",i);
+j=0;
+	while(j<A->sizealpha){
+	printf("avec la lettre %c",j+'a');
+	valsuiv=A;
+		if(valsuiv->trans[i][j]->suiv!=NULL){
+		while(valsuiv->trans[i][j]->suiv!=NULL){
+		printf("%d",A->trans[i][j]->state);
+		}
+		}
+	j++;
+	}
+i++;
+}
+}
+
+void ajouteTransition(automate* A, int depart, int arrivee, char etiquette)
+{
+if(((etiquette-'a')<0)||((etiquette-'a')>26)){
+return;
+}
+	else
+	{
+	ajouteListe(&(A->trans[depart][etiquette-'a']),arrivee);
+	}	
+}
+
+
+automate construitAutomateExemple(){
+
+automate* ptExemple=malloc(sizeof(automate));
+int i,j;
+ptExemple->size=5;
+ptExemple->sizealpha=2;
+ptExemple->initial=(int*) malloc(ptExemple->size*sizeof(int));
+ptExemple->initial[0]=1;
+ptExemple->initial[1]=1;
+ptExemple->initial[2]=0;
+ptExemple->initial[3]=0;
+ptExemple->initial[4]=0;
+ptExemple->final=(int*) malloc(ptExemple->size*sizeof(int));
+ptExemple->final[0]=0;
+ptExemple->final[1]=1;
+ptExemple->final[2]=0;
+ptExemple->final[3]=0;
+ptExemple->final[4]=1;
+
+ptExemple->trans=(liste***) malloc(ptExemple->size*sizeof(liste**));
+
+for(i=0;i<ptExemple->size;i++){
+	ptExemple->trans[i]=(liste**) malloc(ptExemple->sizealpha*sizeof(liste*));
+	for(j=0;j<ptExemple->sizealpha;j++){
+		ptExemple->trans[i][j]=NULL;
+	}
+}
+
+ajouteTransition(ptExemple,0,1,'a');
+ajouteTransition(ptExemple,0,2,'a');
+ajouteTransition(ptExemple,0,3,'a');
+ajouteTransition(ptExemple,2,3,'a');
+ajouteTransition(ptExemple,1,3,'b');
+ajouteTransition(ptExemple,3,3,'b');
+ajouteTransition(ptExemple,3,4,'b');
+ajouteTransition(ptExemple,4,4,'a');
+ajouteTransition(ptExemple,2,4,'b');
+afficheAutomate(ptExemple);
+}
+
+int compteTransistion(automate* A){
+int nbtransi=0;
+int i,j;
+automate* valsuiv;
+
+i=0;
+while(i<A->size)
+{
+j=0;
+	while(j<A->sizealpha){
+	valsuiv=A;
+		if(valsuiv->trans[i][j]->suiv!=NULL){
+		while(valsuiv->trans[i][j]->suiv!=NULL){
+		nbtransi++;
+		}
+		}
+	j++;
+	}
+i++;
+}
+return nbtransi;
+}
+
+int Determinisme(automate* A){
+int deter=1;
+int i,j,valprec;
+automate* valsuiv;
+
+i=0;
+while(i<A->size)
+{
+
+	while(j<A->sizealpha){
+	valsuiv=A;
+		if(valsuiv->trans[i][j]->suiv!=NULL){
+		while(valsuiv->trans[i][j]->suiv!=NULL){
+		nbtransi++;
+		}
+		}
+	j++;
+	}
+j=0;
+i++;
+}
+return nbtransi;
+} 
+int main()
+{
+construitAutomateExemple();
+return 0;
+}

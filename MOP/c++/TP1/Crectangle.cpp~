@@ -1,0 +1,23 @@
+#include "Crectangle.h"
+
+void Crectangle::setX(float x)
+{
+
+	m_x=x;
+}
+void Crectangle::setY(float y)
+{
+
+	m_y=y;
+
+}
+
+float Crectangle::getX()
+{
+return m_x;
+}
+
+float Crectangle::getY()
+{
+return m_y;
+}

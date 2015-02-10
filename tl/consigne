@@ -1,0 +1,7 @@
+dans dossier :
+main.c
+liste.c liste.h
+automate.c automate.h
+graphe.c graphe.h
+chaine.c chaine.h
++makefile

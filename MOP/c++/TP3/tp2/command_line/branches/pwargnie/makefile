@@ -1,0 +1,26 @@
+all: scrolling
+
+scrolling: main.o  CBigCharacterPainter.o \
+		   CBigCharacterPainterDefault.o \
+		   CBigCharacterPainterC.o
+
+	g++ main.o CBigCharacterPainter.o \
+		   CBigCharacterPainterDefault.o \
+		   CBigCharacterPainterC.o \
+		   -o scrolling
+
+main.o: main.cpp
+	g++ -c main.cpp
+
+CBigCharacterPainter.o: CBigCharacterPainter.cpp
+	g++ -c CBigCharacterPainter.cpp
+
+CBigCharacterPainterDefault.o: CBigCharacterPainterDefault.cpp
+	g++ -c CBigCharacterPainterDefault.cpp
+
+CBigCharacterPainterC.o: CBigCharacterPainterC.cpp
+	g++ -c CBigCharacterPainterC.cpp
+
+clean:
+	rm -rf *.o scrolling
+

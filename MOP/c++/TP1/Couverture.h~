@@ -1,0 +1,11 @@
+#ifndef CCouverture_H
+#define Couverture_H
+#include "Couverture.h"
+
+class CCouverture : public Crectangle
+{
+public:
+	CCouverture(void);
+
+};
+#endif

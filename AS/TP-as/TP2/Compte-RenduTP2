@@ -1,0 +1,29 @@
+Pierre	Wargnier
+
+				TP2
+
+
+4)
+  Le * est prioritaire sur le +, et les parenthése se mettent à gauche. Le parser respectent ces conditions.
+
+5)Les associativité sont  définit telle que le premier groupe de valeur est prioritaire sur le deuxiéme. Le parser respecte cette condition.
+
+6)
+Sans %left PLUS et %left TIMES, il n'y a plus de priorité définit, L'associativité est à droite.
+
+7) Les opérations sont inversé, on a le + traité avant le *, et l'associtativité est à droite.
+
+8)
+
+int_plus_left:
+| i=INT                       { Int i }
+| l=int_plus_left PLUS r=INT  { Bin (Plus, l, Int r) }
+
+9)
+
+int_plus_right:
+| i=INT                       { Int i }
+| l=INT PLUS r=int_plus_right { Bin (Plus, Int l, r) }
+
+10)
+Il y a une relation 

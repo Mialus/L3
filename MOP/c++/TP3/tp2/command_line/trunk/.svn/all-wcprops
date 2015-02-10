@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/module_mop2014/!svn/ver/191/tp2/command_line/trunk
+END
+CBigCharacterPainterSpace.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/CBigCharacterPainterSpace.cpp
+END
+headers.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/headers.h
+END
+font.txt
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/font.txt
+END
+CBigCharacterPainter.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/CBigCharacterPainter.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/module_mop2014/!svn/ver/191/tp2/command_line/trunk/main.cpp
+END
+CBigCharacterPainterSpace.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/CBigCharacterPainterSpace.h
+END
+CBigCharacterPainter.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/CBigCharacterPainter.h
+END
+CBigCharacterPainterDefault.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/CBigCharacterPainterDefault.cpp
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/makefile
+END
+CBigCharacterPainterDefault.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/module_mop2014/!svn/ver/190/tp2/command_line/trunk/CBigCharacterPainterDefault.h
+END

@@ -1,0 +1,6 @@
+#include "Cpignon.h"
+
+Cfacade::Cfacade(): Ctriangle()
+{
+
+};

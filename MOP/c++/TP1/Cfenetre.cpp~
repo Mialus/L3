@@ -1,0 +1,6 @@
+#include "Cfenetre.h"
+
+Cfenetre::Cfenetre(): Crectangle()
+{
+
+};

@@ -1,0 +1,7 @@
+digraph AST {
+node [shape="box",style="filled",fillcolor="cornsilk"]2 [label="&&"]
+2 -> 0
+2 -> 1
+0 [label="#t"]
+1 [label="#f"]
+}

@@ -1,0 +1,46 @@
+#include<stdio.h> 
+#include<stdlib.h>
+
+int main()
+{
+	int i,j;
+int n=fork();
+
+if(n==0)
+{
+
+	printf("processus num %d\n",getpid());
+
+	printf("mon pere a le num %d\n",getppid());
+	
+	for(i=0;i<4; i++)
+	{
+		for(j=0; j<1000000000; j++)
+		{
+			if(j==0)
+			{
+				printf("processus1\n");
+
+			}
+		}
+	}
+}
+else
+{
+	printf("chez le pere\n");
+	printf("mon numero est %d\n",getpid());
+	
+	for(i=0;i<4; i++)
+	{
+		for(j=0; j<1000000000; j++)
+		{
+			if(j==0)
+			{
+				printf("processus1\n");
+
+			}
+		}
+	}
+}
+wait();
+}

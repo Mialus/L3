@@ -1,0 +1,18 @@
+#ifndef Ctriangle_H
+#define Ctriangle_H
+
+class Ctriangle 
+{
+
+public:
+
+	void setB(float x);
+	void setH(float y);
+	float getB();
+	float getH();
+
+protected:
+ float m_b;
+ float m_h;
+};
+#endif

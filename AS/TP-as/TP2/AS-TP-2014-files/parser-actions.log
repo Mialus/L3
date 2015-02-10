@@ -1,0 +1,62 @@
+Lookahead token is now INT (178-179)
+State 0:
+Shifting (INT) to state 5
+State 5:
+Lookahead token is now PLUS (179-180)
+Reducing production expr -> INT 
+State 34:
+Shifting (PLUS) to state 10
+State 10:
+Lookahead token is now INT (180-181)
+Shifting (INT) to state 5
+State 5:
+Lookahead token is now TIMES (181-182)
+Reducing production expr -> INT 
+State 11:
+Shifting (TIMES) to state 8
+State 8:
+Lookahead token is now INT (182-183)
+Shifting (INT) to state 5
+State 5:
+Lookahead token is now PLUS (183-184)
+Reducing production expr -> INT 
+State 9:
+Shifting (PLUS) to state 10
+State 10:
+Lookahead token is now INT (184-185)
+Shifting (INT) to state 5
+State 5:
+Lookahead token is now TIMES (185-186)
+Reducing production expr -> INT 
+State 11:
+Shifting (TIMES) to state 8
+State 8:
+Lookahead token is now INT (186-187)
+Shifting (INT) to state 5
+State 5:
+Lookahead token is now TIMES (187-188)
+Reducing production expr -> INT 
+State 9:
+Shifting (TIMES) to state 8
+State 8:
+Lookahead token is now INT (188-189)
+Shifting (INT) to state 5
+State 5:
+Lookahead token is now EOF (190-190)
+Reducing production expr -> INT 
+State 9:
+Reducing production expr -> expr TIMES expr 
+State 9:
+Reducing production expr -> expr TIMES expr 
+State 11:
+Reducing production expr -> expr PLUS expr 
+State 9:
+Reducing production expr -> expr TIMES expr 
+State 11:
+Reducing production expr -> expr PLUS expr 
+State 34:
+Shifting (EOF) to state 35
+State 35:
+Reducing production start -> expr EOF 
+State 33:
+Accepting

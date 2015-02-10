@@ -1,0 +1,19 @@
+Pierre Wargnier			AS
+
+3)
+  l'interprèteur évalue des terminaux qui ne devraient pas être évaluer (a2).
+
+4)
+LETTER EOF 
+
+5) cette régle cache les caratéres ’ ’ ’\t’ ’\r’ ’\n’ du fichier d'entré
+
+6)
+grammar tplexer;
+LETTER  : 'a'..'z';
+start	 :	 R EOF;
+WS	:	( ' '| '\t' | '\r' | '\n' ) {$channel=HIDDEN;};
+INT	:	('0'..'9');
+R 	:	(INT)+;
+
+7)

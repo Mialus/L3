@@ -1,0 +1,15 @@
+#include <sys/stats.h>
+struct stat b;
+
+stat(nom,&b);
+
+printf("taille du fichier %d\n",b.st_size);
+
+char buffer[BUFSIZ];
+fd=open("fichier",o);
+
+n = read(fd,buffer,BUFSIZ);
+while(n>0){
+	write(sock,buffer,n);
+	n=read(fd,buffer,BUFSIZE);
+}

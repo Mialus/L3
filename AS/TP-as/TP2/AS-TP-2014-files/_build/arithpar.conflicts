@@ -1,0 +1,378 @@
+
+** Conflict (shift/reduce) in state 32.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+NOT expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 32, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+NOT expr 
+    expr . TIMES expr 
+
+** In state 32, looking ahead at TIMES, reducing production
+** expr -> NOT expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+NOT expr . 
+
+** Conflict (shift/reduce) in state 31.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr AND expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 31, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr AND expr 
+         expr . TIMES expr 
+
+** In state 31, looking ahead at TIMES, reducing production
+** expr -> expr AND expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr AND expr . 
+
+** Conflict (shift/reduce) in state 29.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr EQ expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 29, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr EQ expr 
+        expr . TIMES expr 
+
+** In state 29, looking ahead at TIMES, reducing production
+** expr -> expr EQ expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr EQ expr . 
+
+** Conflict (shift/reduce) in state 27.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr GEQ expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 27, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr GEQ expr 
+         expr . TIMES expr 
+
+** In state 27, looking ahead at TIMES, reducing production
+** expr -> expr GEQ expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr GEQ expr . 
+
+** Conflict (shift/reduce) in state 25.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr GT expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 25, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr GT expr 
+        expr . TIMES expr 
+
+** In state 25, looking ahead at TIMES, reducing production
+** expr -> expr GT expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr GT expr . 
+
+** Conflict (shift/reduce) in state 23.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr LEQ expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 23, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr LEQ expr 
+         expr . TIMES expr 
+
+** In state 23, looking ahead at TIMES, reducing production
+** expr -> expr LEQ expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr LEQ expr . 
+
+** Conflict (shift/reduce) in state 21.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr LT expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 21, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr LT expr 
+        expr . TIMES expr 
+
+** In state 21, looking ahead at TIMES, reducing production
+** expr -> expr LT expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr LT expr . 
+
+** Conflict (shift/reduce) in state 19.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr DIVIDE expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 19, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr DIVIDE expr 
+            expr . TIMES expr 
+
+** In state 19, looking ahead at TIMES, reducing production
+** expr -> expr DIVIDE expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr DIVIDE expr . 
+
+** Conflict (shift/reduce) in state 17.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr MINUS expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 17, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr MINUS expr 
+           expr . TIMES expr 
+
+** In state 17, looking ahead at TIMES, reducing production
+** expr -> expr MINUS expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr MINUS expr . 
+
+** Conflict (shift/reduce) in state 15.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr NEQ expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 15, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr NEQ expr 
+         expr . TIMES expr 
+
+** In state 15, looking ahead at TIMES, reducing production
+** expr -> expr NEQ expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr NEQ expr . 
+
+** Conflict (shift/reduce) in state 13.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr OR expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 13, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr OR expr 
+        expr . TIMES expr 
+
+** In state 13, looking ahead at TIMES, reducing production
+** expr -> expr OR expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr OR expr . 
+
+** Conflict (shift/reduce) in state 11.
+** Tokens involved: TIMES PLUS OR NEQ MINUS LT LEQ GT GEQ EQ DIVIDE AND
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr PLUS expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 11, looking ahead at TIMES, reducing production
+** expr -> expr PLUS expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr PLUS expr . 
+
+** In state 11, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr PLUS expr 
+          expr . TIMES expr 
+
+** Conflict (shift/reduce) in state 9.
+** Tokens involved: TIMES PLUS OR NEQ MINUS LT LEQ GT GEQ EQ DIVIDE AND
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+expr TIMES expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 9, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+expr TIMES expr 
+           expr . TIMES expr 
+
+** In state 9, looking ahead at TIMES, reducing production
+** expr -> expr TIMES expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+expr TIMES expr . 
+
+** Conflict (shift/reduce) in state 7.
+** Tokens involved: TIMES PLUS
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+MINUS expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+expr EOF 
+(?)
+
+** In state 7, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+MINUS expr 
+      expr . TIMES expr 
+
+** In state 7, looking ahead at TIMES, reducing production
+** expr -> MINUS expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+MINUS expr . 

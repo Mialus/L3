@@ -1,0 +1,10 @@
+#!r6rs
+
+(import (rnrs))          ;  Importation en vrac de tous les modules de la
+                         ;  bibliothèque initiale : nous verrons plus tard
+                         ;  comment procéder plus précisément. Comme vous
+                         ;  l'avez deviné, ceci est un commentaire.
+(define (volume-at t v l)
+  (*v (+ 1 (* l t))))
+
+(write (volume-at 30 1 1e-5))

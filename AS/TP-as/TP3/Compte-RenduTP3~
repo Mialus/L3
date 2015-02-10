@@ -1,0 +1,57 @@
+Pierre	Wargnier
+
+				TP3
+
+
+2 et 3)
+manual_arith_plus_r:
+| l=manual_arith_times_r PLUS r=manual_arith_plus_r { Bin (Plus, l,r) }
+| manual_arith_times_r                              { $1 }
+
+Si r est une expression avec un plus, alors On met Plus l,r pour l'addition, si ce n'est pas le cas, alors $1, de même pour *.
+
+ 
+manual_arith_plus_l:
+| l=manual_arith_plus_l PLUS r=manual_arith_times_l { Bin (Plus, l,r) }
+| manual_arith_times_l                              { $1 }
+
+
+4)
+int_plus_left:
+| i=INT                       { Int i }
+| l=int_plus_left PLUS r=INT  { Bin (Plus, l, Int r) }
+
+
+int_plus_right:
+| i=INT                       { Int i }
+| l=INT PLUS r=int_plus_right { Bin (Plus, Int l, r) }
+
+
+5)
+
+6)
+arithAST:
+  | True
+  | False
+
+  | True -> Dot.N ("#t", [])
+  | False -> Dot.N ("#f", [])
+
+arithlex:
+|"true" 		{ TRUE }
+|"false" 		{ FALSE }
+
+arithpar:
+| l=expr EQ r=expr    { Bin (Equal, l, r) }
+| l=expr NEQ r=expr   { Bin (Different, l, r) }
+| l=expr LT r=expr   { Bin (LessThan, l, r) }
+| l=expr GT r=expr  { Bin (GreaterThan, l, r) }
+| l=expr LEQ r=expr    { Bin (LessThanEq, l, r) }
+| l=expr GEQ r=expr   { Bin (GreaterThanEq, l, r) }
+| l=exprB AND r=exprB   { Bin (And, l, r) }
+| l=exprB OR r=exprB  { Bin (Or, l, r) }
+| TRUE			{True}
+| FALSE			{False}
+
+
+7) oui mais ils considérent ça comme true (en c convertie en booléen en comparant avec 0). La phase d'analyse sémantique.

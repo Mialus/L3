@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+main()
+{
+	int no_fils;
+	int status;
+	status= -1;
+	printf("Je suis le processus PERE %d\n", getpid());
+	printf("No du grand-pere %d\n", getppid());

@@ -1,0 +1,19 @@
+#include "triangle.h"
+
+void triangle::setB(float x){
+
+	m_b=x;
+}
+void triangle::setB(float y){
+
+	m_h=y;
+
+}
+
+float triangle::getB(){
+return m_b;
+}
+
+float triangle::getH(){
+return m_h;
+}

@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define CHIFFREMENT 1
+#define DECHIFFREMENT 2
+#define DECRYPTAGE 3
+#define QUIT 0
+
+//fonction qui réalise le chiffrement par décalage
+void Chiffre( char* nomFichier[], char* nomFichierSortie[], int indice){
+int i;
+
+FILE *f = fopen(nomFichier[0], "r");
+FILE *fsortie = fopen(nomFichierSortie[0], "w");
+
+while ((i = fgetc(f)) != EOF) {
+	unsigned char c = (unsigned char) i;
+	fputc(c,fsortie);
+}
+fclose(f);
+fclose(fsortie);
+}
+
+
+int main(int argc, char *argv[]) {
+
+char* nomFichier[1],nomFichierSortie[1];
+int indice,choix;
+
+do {
+printf("pour chiffrer un texte, tapez 1 \n");
+printf("pour déchiffrer un texte, tapez 2 \n");
+printf("pour décrypter un texte, tapez 4 \n");
+printf("sinon, tapez 0 \n");
+scanf("%d",choix);
+
+switch(choix){
+
+	case CHIFFREMENT:
+
+	printf("Veuillez donner le nom du fichier à chiffrer : \n");
+	scanf("%s",nomFichier[]);
+	printf("Veuillez donner l'indice de décalage : \n");
+	scanf("%d",indice);
+	printf("Veuillez donner le nom du fichier de sortie : \n");
+	scanf("%s",nomFichierSortie[]);
+
+	Chiffre(nomFichier[],nomFichierSortie[],indice);
+
+	break;
+
+	case DECHIFFREMENT:
+
+	break;
+
+	case DECRYPTAGE:
+
+	break;
+	
+	case QUIT:
+	return 0;
+}
+}while(QUIT==0);
+}

@@ -1,0 +1,19 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class fenetre extends JFrame {
+	public fenetre(){
+	setTitle("Jeu de Carte");
+	setSize(500,100);
+	Container c=getContentPane();
+	new JButton("Quitter");
+	c.add(new JButton("Quitter"));
+	c.setLayout(new FlowLayout());
+	}
+
+public static void main(String[] args){
+ fenetre f=new fenetre();
+ f.setVisible(true);
+//System.exit(0);
+}
+}

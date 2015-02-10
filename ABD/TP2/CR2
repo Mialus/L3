@@ -1,0 +1,132 @@
+Wargnier Pierre 
+TP2C 
+21/01 
+N°1
+
+version :
+mysql  Ver 14.14 Distrib 5.5.38, for debian-linux-gnu (x86_64) using readline 6.2
+psql (PostgreSQL) 9.4.0
+pgadmin : 1.2.0.0
+mysql-workbench : 5.2.40
+
+
+1 Transaction
+
+	1.1)
+		On ouvre deux terminaux
+
+		SET TRANSACTION ISOLATION LEVEL
+    		{ READ UNCOMMITTED
+   		 | READ COMMITTED
+  		 | REPEATABLE READ
+ 		 | SNAPSHOT
+  		 | SERIALIZABLE
+   		 }
+		[ ; ]
+
+		Read Committed (lecture des seules données validées) est le niveau par défaut
+
+	SELECT CURRENT_TIMESTAMP; SELECT pg_sleep(60); SELECT CURRENT_TIMESTAMP;
+
+	1.2)
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+		Insert Into item Values ('scissors',40);
+		Update item Set price = price + 30 Where name = 'pencil';
+		Commit;
+		
+		Begin Transaction;
+		Select Avg(price) As a1 From item;
+		Select Avg(price) As a2 From item;
+		Commit;
+	
+	1.3)
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL Uncommited Read;
+		Insert Into item Values ('scissors',40);
+		Update item Set price = price + 30 Where name = 'pencil';
+
+
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL Uncommited Read;
+		Select Avg(price) As a1 From item;
+		Update item set price = 20 Where name = 'scissors';
+		SELECT pg_sleep(10);
+		Select Avg(price) As a2 From item;
+		Commit;
+
+	car on modifie le prix et on le commit aprés le Avg(price)
+	
+	1.4)
+		On lance en deuxiéme :
+
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL Uncommited Read;
+		Insert Into item Values ('scissors',40);
+		Update item Set price = price + 30 Where name = 'pencil';
+		SELECT pg_sleep(10);
+		commit;
+
+		On lance en premier :
+
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL Uncommited Read;
+		Select Avg(price) As a1 From item;
+		SELECT pg_sleep(20);
+		Select Avg(price) As a2 From item;
+		Commit;
+		
+	car la première lecture des données travail sur des données qui seront modifier avant la deuxiéme lecture.
+
+	1.5)
+
+		On lance en deuxiéme :
+
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL Uncommited Read;
+		Insert Into item Values ('scissors',40);
+		DELETE FROM item Where name = 'pencil';
+		SELECT pg_sleep(1);
+		commit;
+
+		On lance en premier :
+
+		Begin Transaction;
+		SET TRANSACTION ISOLATION LEVEL Uncommited Read;
+		Select Avg(price) As a1 From item;
+		SELECT pg_sleep(20);
+		Select Avg(price) As a2 From item;
+		Commit;
+
+		car la première lecture des données travail sur des données qui seront supprimer avant la deuxiéme lecture.
+
+		Le sgbd rend impossible les lectures fantômes.
+		le niveau SERIALISATION émule l'exécution sérielle de transaction pour toutes les transactions validées, comme si les transactions avaient été exécutées les unes après les autres, séquentiellement. 
+		Alors que le niveau REPEATABLE READ ne voit jamais ni les données non validées, ni les données validées par des transactions concurrentes durant son exécution. 
+
+	1.6)
+
+		Le niveau d'isolation requis est REPEATABLE READ.
+
+	1.7)	
+	
+		le niveau d'isolation par défaut de mysql est REPEATABLE READ.
+
+		pour lancer une transaction, on utilise :
+		START TRANSACTION;
+		SELECT @A:=SUM(salary) FROM table1 WHERE type=1;
+		UPDATE table2 SET summary=@A WHERE type=1;
+		COMMIT;
+	
+		et pour rgler le niveau, on utilise :
+
+		SET [GLOBAL | SESSION] TRANSACTION ISOLATION LEVEL
+		  {
+		       REPEATABLE READ
+		     | READ COMMITTED
+		     | READ UNCOMMITTED
+		     | SERIALIZABLE
+		   }
+	
+	
+	

@@ -1,0 +1,10 @@
+#ifndef Cpignon_H
+#define Cpignon_H
+
+class Cpignon : public Ctriangle 
+{
+	public:
+		Cpignon(void);
+
+};
+#endif

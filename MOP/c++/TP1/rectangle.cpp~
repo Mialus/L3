@@ -1,0 +1,18 @@
+#include "rectangle.h"
+
+void rectangle::setX(float x){
+
+	m_x=x;
+}
+void rectangle::setY(float y){
+
+	m_y=y;
+}
+
+float rectangle::getX(){
+return m_x;
+}
+
+float rectangle::getY(){
+return m_y;
+}

@@ -1,0 +1,8 @@
+#ifndef pignon_H
+#define pignon_H
+#include "triangle.h"
+
+class pignon : public triangle {
+
+}
+#endif

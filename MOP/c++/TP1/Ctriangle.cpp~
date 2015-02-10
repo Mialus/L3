@@ -1,0 +1,24 @@
+#include "Ctriangle.h"
+
+void Ctriangle::setB(float x)
+{
+
+	m_b=x;
+}
+void Ctriangle::setH(float y)
+{
+
+	m_h=y;
+
+}
+
+float Ctriangle::getB()
+{
+return m_b;
+}
+
+float Ctriangle::getH()
+{
+return m_h;
+
+}
