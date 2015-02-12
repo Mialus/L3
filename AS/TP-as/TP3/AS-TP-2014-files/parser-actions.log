@@ -1,22 +1,34 @@
-Lookahead token is now TRUE (178-182)
+Lookahead token is now VAR (178-182)
 State 0:
-Shifting (TRUE) to state 2
-State 2:
-Lookahead token is now AND (182-184)
-Reducing production exprB -> TRUE 
-State 12:
-Shifting (AND) to state 37
-State 37:
-Lookahead token is now FALSE (184-189)
-Shifting (FALSE) to state 10
-State 10:
+Shifting (VAR) to state 1
+State 1:
+Lookahead token is now ASSIGN (183-184)
+Reducing production assignable -> VAR 
+State 49:
+Shifting (ASSIGN) to state 50
+State 50:
+Lookahead token is now INT (185-187)
+Shifting (INT) to state 7
+State 7:
+Lookahead token is now PLUS (187-188)
+Reducing production expr -> INT 
+State 51:
+Shifting (PLUS) to state 16
+State 16:
+Lookahead token is now VAR (188-189)
+Shifting (VAR) to state 1
+State 1:
 Lookahead token is now EOF (190-190)
-Reducing production exprB -> FALSE 
-State 38:
-Reducing production exprB -> exprB AND exprB 
-State 12:
-Shifting (EOF) to state 36
-State 36:
-Reducing production start -> exprB EOF 
-State 11:
+Reducing production expr -> VAR 
+State 17:
+Reducing production expr -> expr PLUS expr 
+State 51:
+Reducing production affect -> assignable ASSIGN expr 
+State 52:
+Reducing production deb -> affect 
+State 47:
+Shifting (EOF) to state 48
+State 48:
+Reducing production start -> deb EOF 
+State 27:
 Accepting

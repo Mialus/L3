@@ -10,7 +10,9 @@ open ArithAST
 %token EOF
   PLUS TIMES MINUS DIVIDE
   NEQ EQ LEQ GEQ LT GT
-  AND OR NOT TRUE FALSE INDEX
+  AND OR NOT TRUE FALSE OPEN CLOSE 
+  OPENP CLOSEP ASSIGN PV
+
 %token<int> INT
 %token<float> FLOAT
 %token<string> STRING VAR
@@ -28,10 +30,24 @@ open ArithAST
 %%
 
 
-start: exprB EOF { $1 } /* YACC-style indexing $1, $2, etc */
+start: deb EOF { $1 } /* YACC-style indexing $1, $2, etc */
 
+deb:
+|stmts {$1}
+|expr {$1}
+|affect {$1}
+|exprB {$1}
+
+
+affect:
+|a=assignable ASSIGN t=expr	{Assign (a, t)}
+
+expr_inner:
+| { [] }
+| s=affect PV r=expr_inner { s::r }
 
 expr:
+|a=assignable		{ a }
 | i=INT                 { Int i }
 | f=FLOAT               { Float f }
 | s=STRING              { String s }
@@ -42,8 +58,14 @@ expr:
 | l=expr DIVIDE r=expr  { Bin (Divide, l, r) }
 | MINUS t=expr          { Un (UMinus,t) }       %prec UMINUS
 | NOT   t=expr          { Un (Not,t) }
-| 
+| OPENP	t=expr CLOSEP	{ t }
 
+stmts:
+| l=stmts_inner {Stmts l}
+
+assignable:
+| s=exprC { s }
+| s=VAR { Var s }
 
 exprB:
 
@@ -57,4 +79,7 @@ exprB:
 | l=exprB OR r=exprB  { Bin (Or, l, r) }
 | TRUE			{True}
 | FALSE			{False}
+
+exprC:
+|v=VAR OPEN t=expr CLOSE {Index(v,t) }
 

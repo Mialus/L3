@@ -1,0 +1,29 @@
+
+** Conflict (reduce/reduce) in state 1.
+** Tokens involved: TIMES PLUS OR NEQ MINUS LT LEQ GT GEQ EQ EOF DIVIDE CLOSEP CLOSE AND
+** The following explanations concentrate on token TIMES.
+** This state is reached from start after reading:
+
+VAR 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+start 
+deb EOF 
+expr 
+expr TIMES expr // lookahead token appears
+(?)
+
+** In state 1, looking ahead at TIMES, reducing production
+** assignable -> VAR 
+** is permitted because of the following sub-derivation:
+
+assignable // lookahead token is inherited
+VAR . 
+
+** In state 1, looking ahead at TIMES, reducing production
+** expr -> VAR 
+** is permitted because of the following sub-derivation:
+
+VAR . 

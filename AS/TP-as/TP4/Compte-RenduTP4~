@@ -86,10 +86,6 @@ affect:
 expr:
 |a=assignable		{ a }
 
-assignable:
-|v=exprC{ v }
-|v=VAR { v }
-
 
 
 

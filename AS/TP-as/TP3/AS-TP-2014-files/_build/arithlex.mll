@@ -38,7 +38,12 @@ rule token = parse
 | "~"                   { NOT }
 |"true" 		{ TRUE }
 |"false" 		{ FALSE }
-
+|"["			{ OPEN }
+|"]"			{ CLOSE }
+|"("			{ OPENP }
+|")"			{ CLOSEP }
+|"="			{ ASSIGN }
+|";"			{ PV }
 
 | decimal as i          { INT (ios i) }
 | hexa as h             { INT (ios h) }

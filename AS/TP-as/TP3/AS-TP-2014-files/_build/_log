@@ -2,46 +2,21 @@
 # Target: arith.ml.depends, tags: { extension:ml, file:arith.ml, ocaml, ocamldep, quiet }
 /usr/local/bin/ocamldep.opt -modules arith.ml > arith.ml.depends # cached
 # Target: arithAST.ml.depends, tags: { extension:ml, file:arithAST.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules arithAST.ml > arithAST.ml.depends
+/usr/local/bin/ocamldep.opt -modules arithAST.ml > arithAST.ml.depends # cached
 # Target: helper.ml.depends, tags: { extension:ml, file:helper.ml, ocaml, ocamldep, quiet }
 /usr/local/bin/ocamldep.opt -modules helper.ml > helper.ml.depends # cached
 # Target: helper.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:helper.cmo, file:helper.ml, implem, ocaml, quiet }
 /usr/local/bin/ocamlc.opt -c -g -o helper.cmo helper.ml # cached
+# Target: arithAST.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:arithAST.cmo, file:arithAST.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -g -o arithAST.cmo arithAST.ml # cached
 # Target: arithlex.mll, tags: { extension:mll, file:arithlex.mll, lexer, ocaml, ocamllex, quiet }
-/usr/local/bin/ocamllex.opt -q arithlex.mll
+/usr/local/bin/ocamllex.opt -q arithlex.mll # cached
 # Target: arithlex.ml.depends, tags: { extension:ml, file:arithlex.ml, ocaml, ocamldep, quiet }
 /usr/local/bin/ocamldep.opt -modules arithlex.ml > arithlex.ml.depends # cached
-# Target: arithAST.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:arithAST.cmo, file:arithAST.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -g -o arithAST.cmo arithAST.ml
 # Target: arithpar.mly.depends, tags: { extension:mly, file:arithpar.mly, menhir_ocamldep, ocaml, ocamldep, quiet }
-menhir --raw-depend --ocamldep '/usr/local/bin/ocamldep.opt -modules' arithpar.mly > arithpar.mly.depends # cached
-# Target: arithpar.mly, tags: { byte, compile, extension:mly, file:arithpar.mly, menhir, ocaml, parser, quiet }
-menhir --ocamlc '/usr/local/bin/ocamlc.opt -g' -v --trace --graph --infer arithpar.mly
-+ menhir --ocamlc '/usr/local/bin/ocamlc.opt -g' -v --trace --graph --infer arithpar.mly
-File "arithpar.mly", line 19, characters 0-5:
-Warning: the precedence level assigned to EQ is never useful.
-File "arithpar.mly", line 20, characters 0-5:
-Warning: the precedence level assigned to GEQ is never useful.
-File "arithpar.mly", line 20, characters 0-5:
-Warning: the precedence level assigned to GT is never useful.
-File "arithpar.mly", line 20, characters 0-5:
-Warning: the precedence level assigned to LEQ is never useful.
-File "arithpar.mly", line 20, characters 0-5:
-Warning: the precedence level assigned to LT is never useful.
-File "arithpar.mly", line 19, characters 0-5:
-Warning: the precedence level assigned to NEQ is never useful.
-# Target: arithpar.mli.depends, tags: { extension:mli, file:arithpar.mli, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules arithpar.mli > arithpar.mli.depends # cached
-# Target: arithpar.cmi, tags: { byte, compile, extension:mli, file:arithpar.mli, interf, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -g -o arithpar.cmi arithpar.mli
-# Target: arithlex.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:arithlex.cmo, file:arithlex.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -g -o arithlex.cmo arithlex.ml
-# Target: arith.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:arith.cmo, file:arith.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -g -o arith.cmo arith.ml
-# Target: arithpar.ml.depends, tags: { extension:ml, file:arithpar.ml, ocaml, ocamldep, quiet }
-/usr/local/bin/ocamldep.opt -modules arithpar.ml > arithpar.ml.depends # cached
-# Target: arithpar.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:arithpar.cmo, file:arithpar.ml, implem, ocaml, quiet }
-/usr/local/bin/ocamlc.opt -c -g -o arithpar.cmo arithpar.ml
-# Target: arith.byte, tags: { byte, dont_link_with, extension:byte, file:arith.byte, link, ocaml, program, quiet }
-/usr/local/bin/ocamlc.opt -g unix.cma str.cma nums.cma helper.cmo arithAST.cmo arithpar.cmo arithlex.cmo arith.cmo -o arith.byte
-# Compilation successful.
+menhir --raw-depend --ocamldep '/usr/local/bin/ocamldep.opt -modules' arithpar.mly > arithpar.mly.depends
++ menhir --raw-depend --ocamldep '/usr/local/bin/ocamldep.opt -modules' arithpar.mly > arithpar.mly.depends
+File "arithpar.mly", line 64, characters 4-15:
+Error: stmts_inner is undefined.
+Command exited with code 1.
+# Compilation unsuccessful.

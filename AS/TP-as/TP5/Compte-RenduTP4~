@@ -63,32 +63,7 @@ expr:
 | OPENP	t=expr CLOSEP	{t}
 
 4)
-arithAST:
-  | Assign of t * t
 
-  | Assign(l,r) -> Dot.N(":=", [dot 1; dot r])
-
-arithlex:
-|":="			{ ASSIGN }
-
-arithpar:
-%token EOF ASSIGN
-start: deb EOF { $1 } /* YACC-style indexing $1, $2, etc */
-
-deb:
-|expr {$1}
-|affect {$1}
-
-
-affect:
-|a=assignable ASSIGN t=expr	{ASSIGN (a, t)}
-
-expr:
-|a=assignable		{ a }
-
-assignable:
-|v=exprC{ v }
-|v=VAR { v }
 
 
 

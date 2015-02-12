@@ -7,6 +7,8 @@ type token =
   | STRING of (string)
   | PLUS
   | OR
+  | OPENP
+  | OPEN
   | NOT
   | NEQ
   | MINUS
@@ -20,6 +22,9 @@ type token =
   | EQ
   | EOF
   | DIVIDE
+  | CLOSEP
+  | CLOSE
+  | ASSIGN
   | AND
 
 

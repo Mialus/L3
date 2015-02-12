@@ -19,6 +19,8 @@ type t =
   | True
   | False
   | Index of string * t
+  | Assign of t * t
+  | Stmts of t list
 
 
 let str_of_op = function
@@ -49,4 +51,5 @@ let rec dot = function
   | True -> Dot.N ("#t", [])
   | False -> Dot.N ("#f", [])
   | Index (id,x) -> Dot.N (id^"[.]", [dot x])
-
+  | Assign(l,r) -> Dot.N(":=", [dot l; dot r])
+  | Stmts (l) -> Dot.N(";",map dot l)
