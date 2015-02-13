@@ -42,12 +42,9 @@ deb:
 affect:
 |a=assignable ASSIGN t=expr	{Assign (a, t)}
 
-stmts:
-| l=stmts_inner {Stmts l}
-
-expr_inner:
+stmts_inner:
 | { [] }
-| s=affect PV r=expr_inner { s::r }
+| s=stmt PV r=expr_inner { s::r }
 
 expr:
 |a=assignable		{ a }
@@ -63,6 +60,8 @@ expr:
 | NOT   t=expr          { Un (Not,t) }
 | OPENP	t=expr CLOSEP	{ t }
 
+stmts:
+| l=stmts_inner {Stmts l}
 
 assignable:
 | s=exprC { s }

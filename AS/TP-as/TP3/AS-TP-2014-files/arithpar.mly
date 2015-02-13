@@ -11,7 +11,7 @@ open ArithAST
   PLUS TIMES MINUS DIVIDE
   NEQ EQ LEQ GEQ LT GT
   AND OR NOT TRUE FALSE OPEN CLOSE 
-  OPENP CLOSEP ASSIGN PV
+  OPENP CLOSEP ASSIGN FINAL
 
 %token<int> INT
 %token<float> FLOAT
@@ -42,9 +42,9 @@ deb:
 affect:
 |a=assignable ASSIGN t=expr	{Assign (a, t)}
 
-expr_inner:
+stmts_inner:
 | { [] }
-| s=affect PV r=expr_inner { s::r }
+| s=stmt PV r=expr_inner { s::r }
 
 expr:
 |a=assignable		{ a }

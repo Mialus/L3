@@ -42,9 +42,9 @@ deb:
 affect:
 |a=assignable ASSIGN t=expr	{Assign (a, t)}
 
-expr_inner:
+stmts_inner:
 | { [] }
-| s=affect PV r=expr_inner { s::r }
+| s=stmt PV r=expr_inner { s::r }
 
 expr:
 |a=assignable		{ a }
