@@ -4,6 +4,10 @@ public class Repertoire extends Noeud{
 private List<Noeud> enf = new ArrayList<>();
 private int taille=4096;
 
+public Repertoire(String nom){
+m_nom=nom;
+}
+
 public void setNom(String nom){
 m_nom=nom;
 }

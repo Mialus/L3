@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="poemefr0.css" type="text/css"?>
+
+<!DOCTYPE poemefr0 SYSTEM "poemefr0.dtd">
+
+<poemefr0>
+  <preambule>
+    <titre>Du poète à son parti</titre>
+    <recueil>La Diane française</recueil>
+    <date>1946</date>
+    <auteur>
+      <prenom>Louis</prenom>
+      <nom>Aragon</nom>
+      <naissance>1897</naissance>
+      <deces>1982</deces>
+    </auteur>
+  </preambule>
+  <corps>
+    <strophe>
+      <ligne>Mon parti m'a rendu mes yeux et ma mémoire</ligne> 
+      <ligne>Je ne savais plus rien de ce qu'un enfant sait</ligne> 
+      <ligne>Que mon sang fût si rouge et mon coeur fût français</ligne> 
+      <ligne>Je savais seulement que la nuit était noire</ligne> 
+      <ligne>Mon parti m'a rendu mes yeux et ma mémoire</ligne>
+    </strophe>
+    <strophe>
+      <ligne>Mon parti m'a rendu le sens de l'épopée</ligne> 
+      <ligne>Je vois Jeanne filer Roland sonne le cor</ligne> 
+      <ligne>C'est le temps des héros qui renaît au Vercors</ligne> 
+      <ligne>Les plus simples des mots font le bruit des épées</ligne> 
+      <ligne>Mon parti m'a rendu le sens de l'épopée</ligne>
+    </strophe>
+    <strophe>
+      <ligne>Mon parti m'a rendu les couleurs de la France</ligne> 
+      <ligne>Mon parti mon parti merci de tes leçons</ligne> 
+      <ligne>Et depuis ce temps-là tout me vient en chansons</ligne> 
+      <ligne>La colère et l'amour la joie et la souffrance</ligne> 
+      <ligne>Mon parti m'a rendu les couleurs de la France</ligne>
+    </strophe>
+  </corps>
+</poemefr0>
