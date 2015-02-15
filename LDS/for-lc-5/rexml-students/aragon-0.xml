@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet href="poemefr0.css" type="text/css"?>
+
+<!DOCTYPE poemefr0 SYSTEM "poemefr0.dtd">
+
+<poemefr0>
+  <preambule>
+    <titre>Il n'y a pas d'amour heureux</titre>
+    <recueil>La Diane française</recueil>
+    <date>1946</date>
+    <auteur>
+      <prenom>Louis</prenom>
+      <nom>Aragon</nom>
+      <naissance>1897</naissance>
+      <deces>1982</deces>
+    </auteur>
+  </preambule>
+  <corps>
+    <strophe>
+      <ligne>Rien n'est jamais acquis à l'homme Ni sa force</ligne>
+      <ligne>Ni sa faiblesse ni son coeur Et quand il croit</ligne>
+      <ligne>Ouvrir ses bras son ombre est celle d'une croix</ligne>
+      <ligne>Et quand il croit serrer son bonheur il le broie</ligne>
+      <ligne>Sa vie est un étrange et douloureux divorce</ligne>
+      <ligne><r/>Il n'y a pas d'amour heureux</ligne>
+    </strophe>
+    <strophe>
+      <ligne>Sa vie Elle ressemble à ces soldats sans armes</ligne>
+      <ligne>Qu'on avait habillés pour un autre destin</ligne>
+      <ligne>À quoi peut leur servir de se lever matin</ligne>
+      <ligne>Eux qu'on retrouve au soir désoeuvrés incertains</ligne>
+      <ligne>Dites ces mots Ma vie Et retenez vos larmes</ligne>
+      <ligne><r/>Il n'y a pas d'amour heureux</ligne>
+    </strophe>
+    <strophe>
+      <ligne>Mon bel amour mon cher amour ma déchirure</ligne>
+      <ligne>Je te porte dans moi comme un oiseau blessé</ligne>
+      <ligne>Et ceux-là sans savoir nous regardent passer</ligne>
+      <ligne>Répétant après moi les mots que j'ai tressés</ligne>
+      <ligne>Et qui pour tes grands yeux tout aussitôt moururent</ligne>
+      <ligne><r/>Il n'y a pas d'amour heureux</ligne>
+    </strophe>
+    <strophe>
+      <ligne>Le temps d'apprendre à vivre il est déjà trop tard</ligne>
+      <ligne>Que pleurent dans la nuit nos coeurs à l'unisson</ligne>
+      <ligne>Ce qu'il faut de malheur pour la moindre chanson</ligne>
+      <ligne>Ce qu'il faut de regrets pour payer un frisson</ligne>
+      <ligne>Ce qu'il faut de sanglots pour un air de guitare</ligne>
+      <ligne><r/>Il n'y a pas d'amour heureux</ligne>
+    </strophe>
+    <strophe>
+      <ligne>Il n'y a pas d'amour qui ne soit à douleur</ligne>
+      <ligne>Il n'y a pas d'amour dont on ne soit meurtri</ligne>
+      <ligne>Il n'y a pas d'amour dont on ne soit flétri</ligne>
+      <ligne>Et pas plus que de toi l'amour de la patrie</ligne>
+      <ligne>Il n'y a pas d'amour qui ne vive de pleurs</ligne>
+      <ligne><r/>Il n'y a pas d'amour heureux</ligne>
+      <ligne><r/>Mais c'est notre amour à tous les deux</ligne>
+    </strophe>
+  </corps>
+</poemefr0>
