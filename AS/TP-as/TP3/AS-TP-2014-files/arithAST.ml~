@@ -5,7 +5,7 @@ open Helper
 
 type op = Plus | Times | Minus | Divide |
   Equal | Different | LessThan | GreaterThan | LessThanEq | GreaterThanEq |
-  And | Or 
+  And | Or | Assign
 type uop = UMinus | Not
 
 type t =
@@ -19,8 +19,14 @@ type t =
   | True
   | False
   | Index of string * t
+  | Parent of t
   | Assign of t * t
   | Stmts of t list
+  | While of t * t
+  | For of t * t * t * t 
+  | Do of t * t
+  | If of t * t
+  | IfElse of t * t * t
 
 
 let str_of_op = function
@@ -51,4 +57,11 @@ let rec dot = function
   | True -> Dot.N ("#t", [])
   | False -> Dot.N ("#f", [])
   | Index (id,x) -> Dot.N (id^"[.]", [dot x])
+  | Parent (t) -> Dot.N ("",[dot t])
   | Assign(l,r) -> Dot.N(":=", [dot l; dot r])
+  | Stmts l -> Dot.N("<stmts>",map dot l)
+  | While (l,r) -> Dot.N("While",[dot l; dot r])
+  | For (s,b,t,ter) -> Dot.N("for",[dot s; dot b; dot t; dot ter])
+  | Do  (s,b)  -> Dot.N("do",[dot s; dot b])
+  | If (b,ter) -> Dot.N("if", [dot b; dot ter])
+  | IfElse (l,m,r) -> Dot.N ("if else", [dot l; dot m; dot r])

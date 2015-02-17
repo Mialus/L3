@@ -43,6 +43,14 @@ rule token = parse
 |"("			{ OPENP }
 |")"			{ CLOSEP }
 |"="			{ ASSIGN }
+|";"			{ PV }
+| "++"                  { PP }
+| "--"                  { MM }
+| "+="                  { PE }
+| "-="                  { ME }
+| "{"                   { ACOPEN }
+| "}"                   { ACOCLO }
+| "while"		        { WHILE }
 
 | decimal as i          { INT (ios i) }
 | hexa as h             { INT (ios h) }

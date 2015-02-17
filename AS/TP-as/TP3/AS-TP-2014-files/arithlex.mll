@@ -44,6 +44,17 @@ rule token = parse
 |")"			{ CLOSEP }
 |"="			{ ASSIGN }
 |";"			{ PV }
+| "++"                  { PP }
+| "--"                  { MM }
+| "+="                  { PE }
+| "-="                  { ME }
+| "{"                   { ACOPEN }
+| "}"                   { ACOCLO }
+| "while"		{ WHILE }
+| "for"			{ FOR }
+| "do"			{ DO }
+| "if"                  { IF }
+| "else"                { ELSE }
 
 | decimal as i          { INT (ios i) }
 | hexa as h             { INT (ios h) }

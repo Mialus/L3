@@ -1,0 +1,1898 @@
+State 0:
+start' -> . start [ # ]
+-- On WHILE shift to state 1
+-- On VAR shift to state 91
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On IF shift to state 53
+-- On FOR shift to state 55
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On DO shift to state 57
+-- On ACOPEN shift to state 58
+-- On terminated_stmt shift to state 95
+-- On start2 shift to state 96
+-- On start shift to state 98
+-- On loop shift to state 77
+-- On exprC shift to state 99
+-- On exprB shift to state 12
+-- On expr shift to state 100
+-- On assignable shift to state 65
+
+State 1:
+terminated_stmt -> WHILE . expr terminated_stmt [ WHILE EOF ELSE ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 48
+
+State 2:
+expr -> VAR . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> VAR . OPEN expr CLOSE [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On OPEN shift to state 3
+-- On WHILE reduce production expr -> VAR 
+-- On VAR reduce production expr -> VAR 
+-- On TIMES reduce production expr -> VAR 
+-- On PV reduce production expr -> VAR 
+-- On PLUS reduce production expr -> VAR 
+-- On OR reduce production expr -> VAR 
+-- On NEQ reduce production expr -> VAR 
+-- On MINUS reduce production expr -> VAR 
+-- On LT reduce production expr -> VAR 
+-- On LEQ reduce production expr -> VAR 
+-- On INTE reduce production expr -> VAR 
+-- On IF reduce production expr -> VAR 
+-- On GT reduce production expr -> VAR 
+-- On GEQ reduce production expr -> VAR 
+-- On FOR reduce production expr -> VAR 
+-- On EQ reduce production expr -> VAR 
+-- On EOF reduce production expr -> VAR 
+-- On DO reduce production expr -> VAR 
+-- On DIVIDE reduce production expr -> VAR 
+-- On DEUP reduce production expr -> VAR 
+-- On CLOSEP reduce production expr -> VAR 
+-- On CLOSE reduce production expr -> VAR 
+-- On AND reduce production expr -> VAR 
+-- On ACOPEN reduce production expr -> VAR 
+
+State 3:
+expr -> VAR OPEN . expr CLOSE [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 46
+
+State 4:
+exprB -> TRUE . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production exprB -> TRUE 
+-- On VAR reduce production exprB -> TRUE 
+-- On TIMES reduce production exprB -> TRUE 
+-- On PV reduce production exprB -> TRUE 
+-- On PLUS reduce production exprB -> TRUE 
+-- On OR reduce production exprB -> TRUE 
+-- On NEQ reduce production exprB -> TRUE 
+-- On MINUS reduce production exprB -> TRUE 
+-- On LT reduce production exprB -> TRUE 
+-- On LEQ reduce production exprB -> TRUE 
+-- On INTE reduce production exprB -> TRUE 
+-- On IF reduce production exprB -> TRUE 
+-- On GT reduce production exprB -> TRUE 
+-- On GEQ reduce production exprB -> TRUE 
+-- On FOR reduce production exprB -> TRUE 
+-- On EQ reduce production exprB -> TRUE 
+-- On EOF reduce production exprB -> TRUE 
+-- On DO reduce production exprB -> TRUE 
+-- On DIVIDE reduce production exprB -> TRUE 
+-- On DEUP reduce production exprB -> TRUE 
+-- On CLOSEP reduce production exprB -> TRUE 
+-- On CLOSE reduce production exprB -> TRUE 
+-- On AND reduce production exprB -> TRUE 
+-- On ACOPEN reduce production exprB -> TRUE 
+
+State 5:
+expr -> STRING . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> STRING 
+-- On VAR reduce production expr -> STRING 
+-- On TIMES reduce production expr -> STRING 
+-- On PV reduce production expr -> STRING 
+-- On PLUS reduce production expr -> STRING 
+-- On OR reduce production expr -> STRING 
+-- On NEQ reduce production expr -> STRING 
+-- On MINUS reduce production expr -> STRING 
+-- On LT reduce production expr -> STRING 
+-- On LEQ reduce production expr -> STRING 
+-- On INTE reduce production expr -> STRING 
+-- On IF reduce production expr -> STRING 
+-- On GT reduce production expr -> STRING 
+-- On GEQ reduce production expr -> STRING 
+-- On FOR reduce production expr -> STRING 
+-- On EQ reduce production expr -> STRING 
+-- On EOF reduce production expr -> STRING 
+-- On DO reduce production expr -> STRING 
+-- On DIVIDE reduce production expr -> STRING 
+-- On DEUP reduce production expr -> STRING 
+-- On CLOSEP reduce production expr -> STRING 
+-- On CLOSE reduce production expr -> STRING 
+-- On AND reduce production expr -> STRING 
+-- On ACOPEN reduce production expr -> STRING 
+
+State 6:
+exprB -> OPENP . exprB CLOSEP [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 44
+-- On expr shift to state 15
+
+State 7:
+expr -> NOT . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 43
+
+State 8:
+expr -> MINUS . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 42
+
+State 9:
+expr -> INT . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> INT 
+-- On VAR reduce production expr -> INT 
+-- On TIMES reduce production expr -> INT 
+-- On PV reduce production expr -> INT 
+-- On PLUS reduce production expr -> INT 
+-- On OR reduce production expr -> INT 
+-- On NEQ reduce production expr -> INT 
+-- On MINUS reduce production expr -> INT 
+-- On LT reduce production expr -> INT 
+-- On LEQ reduce production expr -> INT 
+-- On INTE reduce production expr -> INT 
+-- On IF reduce production expr -> INT 
+-- On GT reduce production expr -> INT 
+-- On GEQ reduce production expr -> INT 
+-- On FOR reduce production expr -> INT 
+-- On EQ reduce production expr -> INT 
+-- On EOF reduce production expr -> INT 
+-- On DO reduce production expr -> INT 
+-- On DIVIDE reduce production expr -> INT 
+-- On DEUP reduce production expr -> INT 
+-- On CLOSEP reduce production expr -> INT 
+-- On CLOSE reduce production expr -> INT 
+-- On AND reduce production expr -> INT 
+-- On ACOPEN reduce production expr -> INT 
+
+State 10:
+expr -> FLOAT . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> FLOAT 
+-- On VAR reduce production expr -> FLOAT 
+-- On TIMES reduce production expr -> FLOAT 
+-- On PV reduce production expr -> FLOAT 
+-- On PLUS reduce production expr -> FLOAT 
+-- On OR reduce production expr -> FLOAT 
+-- On NEQ reduce production expr -> FLOAT 
+-- On MINUS reduce production expr -> FLOAT 
+-- On LT reduce production expr -> FLOAT 
+-- On LEQ reduce production expr -> FLOAT 
+-- On INTE reduce production expr -> FLOAT 
+-- On IF reduce production expr -> FLOAT 
+-- On GT reduce production expr -> FLOAT 
+-- On GEQ reduce production expr -> FLOAT 
+-- On FOR reduce production expr -> FLOAT 
+-- On EQ reduce production expr -> FLOAT 
+-- On EOF reduce production expr -> FLOAT 
+-- On DO reduce production expr -> FLOAT 
+-- On DIVIDE reduce production expr -> FLOAT 
+-- On DEUP reduce production expr -> FLOAT 
+-- On CLOSEP reduce production expr -> FLOAT 
+-- On CLOSE reduce production expr -> FLOAT 
+-- On AND reduce production expr -> FLOAT 
+-- On ACOPEN reduce production expr -> FLOAT 
+
+State 11:
+exprB -> FALSE . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production exprB -> FALSE 
+-- On VAR reduce production exprB -> FALSE 
+-- On TIMES reduce production exprB -> FALSE 
+-- On PV reduce production exprB -> FALSE 
+-- On PLUS reduce production exprB -> FALSE 
+-- On OR reduce production exprB -> FALSE 
+-- On NEQ reduce production exprB -> FALSE 
+-- On MINUS reduce production exprB -> FALSE 
+-- On LT reduce production exprB -> FALSE 
+-- On LEQ reduce production exprB -> FALSE 
+-- On INTE reduce production exprB -> FALSE 
+-- On IF reduce production exprB -> FALSE 
+-- On GT reduce production exprB -> FALSE 
+-- On GEQ reduce production exprB -> FALSE 
+-- On FOR reduce production exprB -> FALSE 
+-- On EQ reduce production exprB -> FALSE 
+-- On EOF reduce production exprB -> FALSE 
+-- On DO reduce production exprB -> FALSE 
+-- On DIVIDE reduce production exprB -> FALSE 
+-- On DEUP reduce production exprB -> FALSE 
+-- On CLOSEP reduce production exprB -> FALSE 
+-- On CLOSE reduce production exprB -> FALSE 
+-- On AND reduce production exprB -> FALSE 
+-- On ACOPEN reduce production exprB -> FALSE 
+
+State 12:
+expr -> exprB . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> exprB . AND exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> exprB . OR exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On OR shift to state 13
+-- On AND shift to state 40
+-- On WHILE reduce production expr -> exprB 
+-- On VAR reduce production expr -> exprB 
+-- On TIMES reduce production expr -> exprB 
+-- On PV reduce production expr -> exprB 
+-- On PLUS reduce production expr -> exprB 
+-- On OR reduce production expr -> exprB 
+-- On NEQ reduce production expr -> exprB 
+-- On MINUS reduce production expr -> exprB 
+-- On LT reduce production expr -> exprB 
+-- On LEQ reduce production expr -> exprB 
+-- On INTE reduce production expr -> exprB 
+-- On IF reduce production expr -> exprB 
+-- On GT reduce production expr -> exprB 
+-- On GEQ reduce production expr -> exprB 
+-- On FOR reduce production expr -> exprB 
+-- On EQ reduce production expr -> exprB 
+-- On EOF reduce production expr -> exprB 
+-- On DO reduce production expr -> exprB 
+-- On DIVIDE reduce production expr -> exprB 
+-- On DEUP reduce production expr -> exprB 
+-- On CLOSEP reduce production expr -> exprB 
+-- On CLOSE reduce production expr -> exprB 
+-- On AND reduce production expr -> exprB 
+-- On ACOPEN reduce production expr -> exprB 
+** Conflict on OR AND
+
+State 13:
+exprB -> exprB OR . exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 14
+-- On expr shift to state 15
+
+State 14:
+expr -> exprB . [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+exprB -> exprB . AND exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> exprB . OR exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> exprB OR exprB . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production exprB -> exprB OR exprB 
+-- On VAR reduce production exprB -> exprB OR exprB 
+-- On TIMES reduce production expr -> exprB 
+-- On TIMES reduce production exprB -> exprB OR exprB 
+-- On PV reduce production exprB -> exprB OR exprB 
+-- On PLUS reduce production expr -> exprB 
+-- On PLUS reduce production exprB -> exprB OR exprB 
+-- On OR reduce production exprB -> exprB OR exprB 
+-- On NEQ reduce production expr -> exprB 
+-- On NEQ reduce production exprB -> exprB OR exprB 
+-- On MINUS reduce production expr -> exprB 
+-- On MINUS reduce production exprB -> exprB OR exprB 
+-- On LT reduce production expr -> exprB 
+-- On LT reduce production exprB -> exprB OR exprB 
+-- On LEQ reduce production expr -> exprB 
+-- On LEQ reduce production exprB -> exprB OR exprB 
+-- On INTE reduce production expr -> exprB 
+-- On INTE reduce production exprB -> exprB OR exprB 
+-- On IF reduce production exprB -> exprB OR exprB 
+-- On GT reduce production expr -> exprB 
+-- On GT reduce production exprB -> exprB OR exprB 
+-- On GEQ reduce production expr -> exprB 
+-- On GEQ reduce production exprB -> exprB OR exprB 
+-- On FOR reduce production exprB -> exprB OR exprB 
+-- On EQ reduce production expr -> exprB 
+-- On EQ reduce production exprB -> exprB OR exprB 
+-- On EOF reduce production exprB -> exprB OR exprB 
+-- On DO reduce production exprB -> exprB OR exprB 
+-- On DIVIDE reduce production expr -> exprB 
+-- On DIVIDE reduce production exprB -> exprB OR exprB 
+-- On DEUP reduce production exprB -> exprB OR exprB 
+-- On CLOSEP reduce production exprB -> exprB OR exprB 
+-- On CLOSE reduce production exprB -> exprB OR exprB 
+-- On AND reduce production exprB -> exprB OR exprB 
+-- On ACOPEN reduce production exprB -> exprB OR exprB 
+** Conflict on TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE
+
+State 15:
+expr -> expr . PLUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . TIMES expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . MINUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . DIVIDE expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . INTE expr DEUP expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+
+State 16:
+expr -> expr TIMES . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 17
+
+State 17:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr TIMES expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> expr TIMES expr 
+-- On VAR reduce production expr -> expr TIMES expr 
+-- On TIMES reduce production expr -> expr TIMES expr 
+-- On PV reduce production expr -> expr TIMES expr 
+-- On PLUS reduce production expr -> expr TIMES expr 
+-- On OR reduce production expr -> expr TIMES expr 
+-- On NEQ reduce production expr -> expr TIMES expr 
+-- On MINUS reduce production expr -> expr TIMES expr 
+-- On LT reduce production expr -> expr TIMES expr 
+-- On LEQ reduce production expr -> expr TIMES expr 
+-- On INTE reduce production expr -> expr TIMES expr 
+-- On IF reduce production expr -> expr TIMES expr 
+-- On GT reduce production expr -> expr TIMES expr 
+-- On GEQ reduce production expr -> expr TIMES expr 
+-- On FOR reduce production expr -> expr TIMES expr 
+-- On EQ reduce production expr -> expr TIMES expr 
+-- On EOF reduce production expr -> expr TIMES expr 
+-- On DO reduce production expr -> expr TIMES expr 
+-- On DIVIDE reduce production expr -> expr TIMES expr 
+-- On DEUP reduce production expr -> expr TIMES expr 
+-- On CLOSEP reduce production expr -> expr TIMES expr 
+-- On CLOSE reduce production expr -> expr TIMES expr 
+-- On AND reduce production expr -> expr TIMES expr 
+-- On ACOPEN reduce production expr -> expr TIMES expr 
+
+State 18:
+expr -> expr PLUS . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 19
+
+State 19:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr PLUS expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production expr -> expr PLUS expr 
+-- On VAR reduce production expr -> expr PLUS expr 
+-- On PV reduce production expr -> expr PLUS expr 
+-- On PLUS reduce production expr -> expr PLUS expr 
+-- On OR reduce production expr -> expr PLUS expr 
+-- On NEQ reduce production expr -> expr PLUS expr 
+-- On MINUS reduce production expr -> expr PLUS expr 
+-- On LT reduce production expr -> expr PLUS expr 
+-- On LEQ reduce production expr -> expr PLUS expr 
+-- On INTE reduce production expr -> expr PLUS expr 
+-- On IF reduce production expr -> expr PLUS expr 
+-- On GT reduce production expr -> expr PLUS expr 
+-- On GEQ reduce production expr -> expr PLUS expr 
+-- On FOR reduce production expr -> expr PLUS expr 
+-- On EQ reduce production expr -> expr PLUS expr 
+-- On EOF reduce production expr -> expr PLUS expr 
+-- On DO reduce production expr -> expr PLUS expr 
+-- On DEUP reduce production expr -> expr PLUS expr 
+-- On CLOSEP reduce production expr -> expr PLUS expr 
+-- On CLOSE reduce production expr -> expr PLUS expr 
+-- On AND reduce production expr -> expr PLUS expr 
+-- On ACOPEN reduce production expr -> expr PLUS expr 
+
+State 20:
+expr -> expr DIVIDE . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 21
+
+State 21:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr DIVIDE expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> expr DIVIDE expr 
+-- On VAR reduce production expr -> expr DIVIDE expr 
+-- On TIMES reduce production expr -> expr DIVIDE expr 
+-- On PV reduce production expr -> expr DIVIDE expr 
+-- On PLUS reduce production expr -> expr DIVIDE expr 
+-- On OR reduce production expr -> expr DIVIDE expr 
+-- On NEQ reduce production expr -> expr DIVIDE expr 
+-- On MINUS reduce production expr -> expr DIVIDE expr 
+-- On LT reduce production expr -> expr DIVIDE expr 
+-- On LEQ reduce production expr -> expr DIVIDE expr 
+-- On INTE reduce production expr -> expr DIVIDE expr 
+-- On IF reduce production expr -> expr DIVIDE expr 
+-- On GT reduce production expr -> expr DIVIDE expr 
+-- On GEQ reduce production expr -> expr DIVIDE expr 
+-- On FOR reduce production expr -> expr DIVIDE expr 
+-- On EQ reduce production expr -> expr DIVIDE expr 
+-- On EOF reduce production expr -> expr DIVIDE expr 
+-- On DO reduce production expr -> expr DIVIDE expr 
+-- On DIVIDE reduce production expr -> expr DIVIDE expr 
+-- On DEUP reduce production expr -> expr DIVIDE expr 
+-- On CLOSEP reduce production expr -> expr DIVIDE expr 
+-- On CLOSE reduce production expr -> expr DIVIDE expr 
+-- On AND reduce production expr -> expr DIVIDE expr 
+-- On ACOPEN reduce production expr -> expr DIVIDE expr 
+
+State 22:
+exprB -> expr NEQ . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 23
+
+State 23:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr NEQ expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production exprB -> expr NEQ expr 
+-- On VAR reduce production exprB -> expr NEQ expr 
+-- On PV reduce production exprB -> expr NEQ expr 
+-- On OR reduce production exprB -> expr NEQ expr 
+-- On NEQ reduce production exprB -> expr NEQ expr 
+-- On INTE reduce production exprB -> expr NEQ expr 
+-- On IF reduce production exprB -> expr NEQ expr 
+-- On FOR reduce production exprB -> expr NEQ expr 
+-- On EQ reduce production exprB -> expr NEQ expr 
+-- On EOF reduce production exprB -> expr NEQ expr 
+-- On DO reduce production exprB -> expr NEQ expr 
+-- On DEUP reduce production exprB -> expr NEQ expr 
+-- On CLOSEP reduce production exprB -> expr NEQ expr 
+-- On CLOSE reduce production exprB -> expr NEQ expr 
+-- On AND reduce production exprB -> expr NEQ expr 
+-- On ACOPEN reduce production exprB -> expr NEQ expr 
+
+State 24:
+expr -> expr MINUS . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 25
+
+State 25:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr MINUS expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production expr -> expr MINUS expr 
+-- On VAR reduce production expr -> expr MINUS expr 
+-- On PV reduce production expr -> expr MINUS expr 
+-- On PLUS reduce production expr -> expr MINUS expr 
+-- On OR reduce production expr -> expr MINUS expr 
+-- On NEQ reduce production expr -> expr MINUS expr 
+-- On MINUS reduce production expr -> expr MINUS expr 
+-- On LT reduce production expr -> expr MINUS expr 
+-- On LEQ reduce production expr -> expr MINUS expr 
+-- On INTE reduce production expr -> expr MINUS expr 
+-- On IF reduce production expr -> expr MINUS expr 
+-- On GT reduce production expr -> expr MINUS expr 
+-- On GEQ reduce production expr -> expr MINUS expr 
+-- On FOR reduce production expr -> expr MINUS expr 
+-- On EQ reduce production expr -> expr MINUS expr 
+-- On EOF reduce production expr -> expr MINUS expr 
+-- On DO reduce production expr -> expr MINUS expr 
+-- On DEUP reduce production expr -> expr MINUS expr 
+-- On CLOSEP reduce production expr -> expr MINUS expr 
+-- On CLOSE reduce production expr -> expr MINUS expr 
+-- On AND reduce production expr -> expr MINUS expr 
+-- On ACOPEN reduce production expr -> expr MINUS expr 
+
+State 26:
+exprB -> expr LT . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 27
+
+State 27:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr LT expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On MINUS shift to state 24
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production exprB -> expr LT expr 
+-- On VAR reduce production exprB -> expr LT expr 
+-- On PV reduce production exprB -> expr LT expr 
+-- On OR reduce production exprB -> expr LT expr 
+-- On NEQ reduce production exprB -> expr LT expr 
+-- On LT reduce production exprB -> expr LT expr 
+-- On LEQ reduce production exprB -> expr LT expr 
+-- On INTE reduce production exprB -> expr LT expr 
+-- On IF reduce production exprB -> expr LT expr 
+-- On GT reduce production exprB -> expr LT expr 
+-- On GEQ reduce production exprB -> expr LT expr 
+-- On FOR reduce production exprB -> expr LT expr 
+-- On EQ reduce production exprB -> expr LT expr 
+-- On EOF reduce production exprB -> expr LT expr 
+-- On DO reduce production exprB -> expr LT expr 
+-- On DEUP reduce production exprB -> expr LT expr 
+-- On CLOSEP reduce production exprB -> expr LT expr 
+-- On CLOSE reduce production exprB -> expr LT expr 
+-- On AND reduce production exprB -> expr LT expr 
+-- On ACOPEN reduce production exprB -> expr LT expr 
+
+State 28:
+exprB -> expr LEQ . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 29
+
+State 29:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr LEQ expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On MINUS shift to state 24
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production exprB -> expr LEQ expr 
+-- On VAR reduce production exprB -> expr LEQ expr 
+-- On PV reduce production exprB -> expr LEQ expr 
+-- On OR reduce production exprB -> expr LEQ expr 
+-- On NEQ reduce production exprB -> expr LEQ expr 
+-- On LT reduce production exprB -> expr LEQ expr 
+-- On LEQ reduce production exprB -> expr LEQ expr 
+-- On INTE reduce production exprB -> expr LEQ expr 
+-- On IF reduce production exprB -> expr LEQ expr 
+-- On GT reduce production exprB -> expr LEQ expr 
+-- On GEQ reduce production exprB -> expr LEQ expr 
+-- On FOR reduce production exprB -> expr LEQ expr 
+-- On EQ reduce production exprB -> expr LEQ expr 
+-- On EOF reduce production exprB -> expr LEQ expr 
+-- On DO reduce production exprB -> expr LEQ expr 
+-- On DEUP reduce production exprB -> expr LEQ expr 
+-- On CLOSEP reduce production exprB -> expr LEQ expr 
+-- On CLOSE reduce production exprB -> expr LEQ expr 
+-- On AND reduce production exprB -> expr LEQ expr 
+-- On ACOPEN reduce production exprB -> expr LEQ expr 
+
+State 30:
+exprB -> expr GT . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 31
+
+State 31:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr GT expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On MINUS shift to state 24
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production exprB -> expr GT expr 
+-- On VAR reduce production exprB -> expr GT expr 
+-- On PV reduce production exprB -> expr GT expr 
+-- On OR reduce production exprB -> expr GT expr 
+-- On NEQ reduce production exprB -> expr GT expr 
+-- On LT reduce production exprB -> expr GT expr 
+-- On LEQ reduce production exprB -> expr GT expr 
+-- On INTE reduce production exprB -> expr GT expr 
+-- On IF reduce production exprB -> expr GT expr 
+-- On GT reduce production exprB -> expr GT expr 
+-- On GEQ reduce production exprB -> expr GT expr 
+-- On FOR reduce production exprB -> expr GT expr 
+-- On EQ reduce production exprB -> expr GT expr 
+-- On EOF reduce production exprB -> expr GT expr 
+-- On DO reduce production exprB -> expr GT expr 
+-- On DEUP reduce production exprB -> expr GT expr 
+-- On CLOSEP reduce production exprB -> expr GT expr 
+-- On CLOSE reduce production exprB -> expr GT expr 
+-- On AND reduce production exprB -> expr GT expr 
+-- On ACOPEN reduce production exprB -> expr GT expr 
+
+State 32:
+exprB -> expr GEQ . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 33
+
+State 33:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr GEQ expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On MINUS shift to state 24
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production exprB -> expr GEQ expr 
+-- On VAR reduce production exprB -> expr GEQ expr 
+-- On PV reduce production exprB -> expr GEQ expr 
+-- On OR reduce production exprB -> expr GEQ expr 
+-- On NEQ reduce production exprB -> expr GEQ expr 
+-- On LT reduce production exprB -> expr GEQ expr 
+-- On LEQ reduce production exprB -> expr GEQ expr 
+-- On INTE reduce production exprB -> expr GEQ expr 
+-- On IF reduce production exprB -> expr GEQ expr 
+-- On GT reduce production exprB -> expr GEQ expr 
+-- On GEQ reduce production exprB -> expr GEQ expr 
+-- On FOR reduce production exprB -> expr GEQ expr 
+-- On EQ reduce production exprB -> expr GEQ expr 
+-- On EOF reduce production exprB -> expr GEQ expr 
+-- On DO reduce production exprB -> expr GEQ expr 
+-- On DEUP reduce production exprB -> expr GEQ expr 
+-- On CLOSEP reduce production exprB -> expr GEQ expr 
+-- On CLOSE reduce production exprB -> expr GEQ expr 
+-- On AND reduce production exprB -> expr GEQ expr 
+-- On ACOPEN reduce production exprB -> expr GEQ expr 
+
+State 34:
+expr -> expr INTE . expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 35
+
+State 35:
+expr -> expr . PLUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP ]
+expr -> expr . TIMES expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP ]
+expr -> expr . MINUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP ]
+expr -> expr . DIVIDE expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP ]
+expr -> expr . INTE expr DEUP expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP ]
+expr -> expr INTE expr . DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP AND ]
+exprB -> expr . NEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP AND ]
+exprB -> expr . LT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP AND ]
+exprB -> expr . GT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP AND ]
+exprB -> expr . LEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP AND ]
+exprB -> expr . GEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE DEUP AND ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On DEUP shift to state 38
+
+State 36:
+exprB -> expr EQ . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 37
+
+State 37:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr EQ expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production exprB -> expr EQ expr 
+-- On VAR reduce production exprB -> expr EQ expr 
+-- On PV reduce production exprB -> expr EQ expr 
+-- On OR reduce production exprB -> expr EQ expr 
+-- On NEQ reduce production exprB -> expr EQ expr 
+-- On INTE reduce production exprB -> expr EQ expr 
+-- On IF reduce production exprB -> expr EQ expr 
+-- On FOR reduce production exprB -> expr EQ expr 
+-- On EQ reduce production exprB -> expr EQ expr 
+-- On EOF reduce production exprB -> expr EQ expr 
+-- On DO reduce production exprB -> expr EQ expr 
+-- On DEUP reduce production exprB -> expr EQ expr 
+-- On CLOSEP reduce production exprB -> expr EQ expr 
+-- On CLOSE reduce production exprB -> expr EQ expr 
+-- On AND reduce production exprB -> expr EQ expr 
+-- On ACOPEN reduce production exprB -> expr EQ expr 
+
+State 38:
+expr -> expr INTE expr DEUP . expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 39
+
+State 39:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr INTE expr DEUP expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On WHILE reduce production expr -> expr INTE expr DEUP expr 
+-- On VAR reduce production expr -> expr INTE expr DEUP expr 
+-- On TIMES reduce production expr -> expr INTE expr DEUP expr 
+-- On PV reduce production expr -> expr INTE expr DEUP expr 
+-- On PLUS reduce production expr -> expr INTE expr DEUP expr 
+-- On OR reduce production expr -> expr INTE expr DEUP expr 
+-- On NEQ reduce production expr -> expr INTE expr DEUP expr 
+-- On MINUS reduce production expr -> expr INTE expr DEUP expr 
+-- On LT reduce production expr -> expr INTE expr DEUP expr 
+-- On LEQ reduce production expr -> expr INTE expr DEUP expr 
+-- On INTE reduce production expr -> expr INTE expr DEUP expr 
+-- On IF reduce production expr -> expr INTE expr DEUP expr 
+-- On GT reduce production expr -> expr INTE expr DEUP expr 
+-- On GEQ reduce production expr -> expr INTE expr DEUP expr 
+-- On FOR reduce production expr -> expr INTE expr DEUP expr 
+-- On EQ reduce production expr -> expr INTE expr DEUP expr 
+-- On EOF reduce production expr -> expr INTE expr DEUP expr 
+-- On DO reduce production expr -> expr INTE expr DEUP expr 
+-- On DIVIDE reduce production expr -> expr INTE expr DEUP expr 
+-- On DEUP reduce production expr -> expr INTE expr DEUP expr 
+-- On CLOSEP reduce production expr -> expr INTE expr DEUP expr 
+-- On CLOSE reduce production expr -> expr INTE expr DEUP expr 
+-- On AND reduce production expr -> expr INTE expr DEUP expr 
+-- On ACOPEN reduce production expr -> expr INTE expr DEUP expr 
+** Conflict on TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE
+
+State 40:
+exprB -> exprB AND . exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 41
+-- On expr shift to state 15
+
+State 41:
+expr -> exprB . [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+exprB -> exprB . AND exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> exprB AND exprB . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> exprB . OR exprB [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production exprB -> exprB AND exprB 
+-- On VAR reduce production exprB -> exprB AND exprB 
+-- On TIMES reduce production expr -> exprB 
+-- On TIMES reduce production exprB -> exprB AND exprB 
+-- On PV reduce production exprB -> exprB AND exprB 
+-- On PLUS reduce production expr -> exprB 
+-- On PLUS reduce production exprB -> exprB AND exprB 
+-- On OR reduce production exprB -> exprB AND exprB 
+-- On NEQ reduce production expr -> exprB 
+-- On NEQ reduce production exprB -> exprB AND exprB 
+-- On MINUS reduce production expr -> exprB 
+-- On MINUS reduce production exprB -> exprB AND exprB 
+-- On LT reduce production expr -> exprB 
+-- On LT reduce production exprB -> exprB AND exprB 
+-- On LEQ reduce production expr -> exprB 
+-- On LEQ reduce production exprB -> exprB AND exprB 
+-- On INTE reduce production expr -> exprB 
+-- On INTE reduce production exprB -> exprB AND exprB 
+-- On IF reduce production exprB -> exprB AND exprB 
+-- On GT reduce production expr -> exprB 
+-- On GT reduce production exprB -> exprB AND exprB 
+-- On GEQ reduce production expr -> exprB 
+-- On GEQ reduce production exprB -> exprB AND exprB 
+-- On FOR reduce production exprB -> exprB AND exprB 
+-- On EQ reduce production expr -> exprB 
+-- On EQ reduce production exprB -> exprB AND exprB 
+-- On EOF reduce production exprB -> exprB AND exprB 
+-- On DO reduce production exprB -> exprB AND exprB 
+-- On DIVIDE reduce production expr -> exprB 
+-- On DIVIDE reduce production exprB -> exprB AND exprB 
+-- On DEUP reduce production exprB -> exprB AND exprB 
+-- On CLOSEP reduce production exprB -> exprB AND exprB 
+-- On CLOSE reduce production exprB -> exprB AND exprB 
+-- On AND reduce production exprB -> exprB AND exprB 
+-- On ACOPEN reduce production exprB -> exprB AND exprB 
+** Conflict on TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE
+
+State 42:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> MINUS expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> MINUS expr 
+-- On VAR reduce production expr -> MINUS expr 
+-- On TIMES reduce production expr -> MINUS expr 
+-- On PV reduce production expr -> MINUS expr 
+-- On PLUS reduce production expr -> MINUS expr 
+-- On OR reduce production expr -> MINUS expr 
+-- On NEQ reduce production expr -> MINUS expr 
+-- On MINUS reduce production expr -> MINUS expr 
+-- On LT reduce production expr -> MINUS expr 
+-- On LEQ reduce production expr -> MINUS expr 
+-- On INTE reduce production expr -> MINUS expr 
+-- On IF reduce production expr -> MINUS expr 
+-- On GT reduce production expr -> MINUS expr 
+-- On GEQ reduce production expr -> MINUS expr 
+-- On FOR reduce production expr -> MINUS expr 
+-- On EQ reduce production expr -> MINUS expr 
+-- On EOF reduce production expr -> MINUS expr 
+-- On DO reduce production expr -> MINUS expr 
+-- On DIVIDE reduce production expr -> MINUS expr 
+-- On DEUP reduce production expr -> MINUS expr 
+-- On CLOSEP reduce production expr -> MINUS expr 
+-- On CLOSE reduce production expr -> MINUS expr 
+-- On AND reduce production expr -> MINUS expr 
+-- On ACOPEN reduce production expr -> MINUS expr 
+
+State 43:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> NOT expr . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> NOT expr 
+-- On VAR reduce production expr -> NOT expr 
+-- On TIMES reduce production expr -> NOT expr 
+-- On PV reduce production expr -> NOT expr 
+-- On PLUS reduce production expr -> NOT expr 
+-- On OR reduce production expr -> NOT expr 
+-- On NEQ reduce production expr -> NOT expr 
+-- On MINUS reduce production expr -> NOT expr 
+-- On LT reduce production expr -> NOT expr 
+-- On LEQ reduce production expr -> NOT expr 
+-- On INTE reduce production expr -> NOT expr 
+-- On IF reduce production expr -> NOT expr 
+-- On GT reduce production expr -> NOT expr 
+-- On GEQ reduce production expr -> NOT expr 
+-- On FOR reduce production expr -> NOT expr 
+-- On EQ reduce production expr -> NOT expr 
+-- On EOF reduce production expr -> NOT expr 
+-- On DO reduce production expr -> NOT expr 
+-- On DIVIDE reduce production expr -> NOT expr 
+-- On DEUP reduce production expr -> NOT expr 
+-- On CLOSEP reduce production expr -> NOT expr 
+-- On CLOSE reduce production expr -> NOT expr 
+-- On AND reduce production expr -> NOT expr 
+-- On ACOPEN reduce production expr -> NOT expr 
+
+State 44:
+expr -> exprB . [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+exprB -> exprB . AND exprB [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSEP AND ]
+exprB -> exprB . OR exprB [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSEP AND ]
+exprB -> OPENP exprB . CLOSEP [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On OR shift to state 13
+-- On CLOSEP shift to state 45
+-- On AND shift to state 40
+-- On TIMES reduce production expr -> exprB 
+-- On PLUS reduce production expr -> exprB 
+-- On NEQ reduce production expr -> exprB 
+-- On MINUS reduce production expr -> exprB 
+-- On LT reduce production expr -> exprB 
+-- On LEQ reduce production expr -> exprB 
+-- On INTE reduce production expr -> exprB 
+-- On GT reduce production expr -> exprB 
+-- On GEQ reduce production expr -> exprB 
+-- On EQ reduce production expr -> exprB 
+-- On DIVIDE reduce production expr -> exprB 
+
+State 45:
+exprB -> OPENP exprB CLOSEP . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production exprB -> OPENP exprB CLOSEP 
+-- On VAR reduce production exprB -> OPENP exprB CLOSEP 
+-- On TIMES reduce production exprB -> OPENP exprB CLOSEP 
+-- On PV reduce production exprB -> OPENP exprB CLOSEP 
+-- On PLUS reduce production exprB -> OPENP exprB CLOSEP 
+-- On OR reduce production exprB -> OPENP exprB CLOSEP 
+-- On NEQ reduce production exprB -> OPENP exprB CLOSEP 
+-- On MINUS reduce production exprB -> OPENP exprB CLOSEP 
+-- On LT reduce production exprB -> OPENP exprB CLOSEP 
+-- On LEQ reduce production exprB -> OPENP exprB CLOSEP 
+-- On INTE reduce production exprB -> OPENP exprB CLOSEP 
+-- On IF reduce production exprB -> OPENP exprB CLOSEP 
+-- On GT reduce production exprB -> OPENP exprB CLOSEP 
+-- On GEQ reduce production exprB -> OPENP exprB CLOSEP 
+-- On FOR reduce production exprB -> OPENP exprB CLOSEP 
+-- On EQ reduce production exprB -> OPENP exprB CLOSEP 
+-- On EOF reduce production exprB -> OPENP exprB CLOSEP 
+-- On DO reduce production exprB -> OPENP exprB CLOSEP 
+-- On DIVIDE reduce production exprB -> OPENP exprB CLOSEP 
+-- On DEUP reduce production exprB -> OPENP exprB CLOSEP 
+-- On CLOSEP reduce production exprB -> OPENP exprB CLOSEP 
+-- On CLOSE reduce production exprB -> OPENP exprB CLOSEP 
+-- On AND reduce production exprB -> OPENP exprB CLOSEP 
+-- On ACOPEN reduce production exprB -> OPENP exprB CLOSEP 
+
+State 46:
+expr -> expr . PLUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . TIMES expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . MINUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . DIVIDE expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> VAR OPEN expr . CLOSE [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+exprB -> expr . EQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . NEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . LT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . GT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . LEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . GEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On CLOSE shift to state 47
+
+State 47:
+expr -> VAR OPEN expr CLOSE . [ WHILE VAR TIMES PV PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ EOF DO DIVIDE DEUP CLOSEP CLOSE AND ACOPEN ]
+-- On WHILE reduce production expr -> VAR OPEN expr CLOSE 
+-- On VAR reduce production expr -> VAR OPEN expr CLOSE 
+-- On TIMES reduce production expr -> VAR OPEN expr CLOSE 
+-- On PV reduce production expr -> VAR OPEN expr CLOSE 
+-- On PLUS reduce production expr -> VAR OPEN expr CLOSE 
+-- On OR reduce production expr -> VAR OPEN expr CLOSE 
+-- On NEQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On MINUS reduce production expr -> VAR OPEN expr CLOSE 
+-- On LT reduce production expr -> VAR OPEN expr CLOSE 
+-- On LEQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On INTE reduce production expr -> VAR OPEN expr CLOSE 
+-- On IF reduce production expr -> VAR OPEN expr CLOSE 
+-- On GT reduce production expr -> VAR OPEN expr CLOSE 
+-- On GEQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On FOR reduce production expr -> VAR OPEN expr CLOSE 
+-- On EQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On EOF reduce production expr -> VAR OPEN expr CLOSE 
+-- On DO reduce production expr -> VAR OPEN expr CLOSE 
+-- On DIVIDE reduce production expr -> VAR OPEN expr CLOSE 
+-- On DEUP reduce production expr -> VAR OPEN expr CLOSE 
+-- On CLOSEP reduce production expr -> VAR OPEN expr CLOSE 
+-- On CLOSE reduce production expr -> VAR OPEN expr CLOSE 
+-- On AND reduce production expr -> VAR OPEN expr CLOSE 
+-- On ACOPEN reduce production expr -> VAR OPEN expr CLOSE 
+
+State 48:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+terminated_stmt -> WHILE expr . terminated_stmt [ WHILE EOF ELSE ]
+-- On WHILE shift to state 1
+-- On VAR shift to state 49
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On IF shift to state 53
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On FOR shift to state 55
+-- On EQ shift to state 36
+-- On DO shift to state 57
+-- On DIVIDE shift to state 20
+-- On ACOPEN shift to state 58
+-- On terminated_stmt shift to state 90
+-- On loop shift to state 77
+-- On exprC shift to state 78
+-- On assignable shift to state 65
+
+State 49:
+assignable -> VAR . [ PP PE MM ME ASSIGN ]
+assignable -> VAR . OPEN expr CLOSE [ PP PE MM ME ASSIGN ]
+-- On OPEN shift to state 50
+-- On PP reduce production assignable -> VAR 
+-- On PE reduce production assignable -> VAR 
+-- On MM reduce production assignable -> VAR 
+-- On ME reduce production assignable -> VAR 
+-- On ASSIGN reduce production assignable -> VAR 
+
+State 50:
+assignable -> VAR OPEN . expr CLOSE [ PP PE MM ME ASSIGN ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 51
+
+State 51:
+assignable -> VAR OPEN expr . CLOSE [ PP PE MM ME ASSIGN ]
+expr -> expr . PLUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . TIMES expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . MINUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . DIVIDE expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . INTE expr DEUP expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+exprB -> expr . EQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . NEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . LT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . GT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . LEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . GEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On CLOSE shift to state 52
+
+State 52:
+assignable -> VAR OPEN expr CLOSE . [ PP PE MM ME ASSIGN ]
+-- On PP reduce production assignable -> VAR OPEN expr CLOSE 
+-- On PE reduce production assignable -> VAR OPEN expr CLOSE 
+-- On MM reduce production assignable -> VAR OPEN expr CLOSE 
+-- On ME reduce production assignable -> VAR OPEN expr CLOSE 
+-- On ASSIGN reduce production assignable -> VAR OPEN expr CLOSE 
+
+State 53:
+terminated_stmt -> IF . expr terminated_stmt ELSE terminated_stmt [ WHILE EOF ELSE ]
+terminated_stmt -> IF . expr terminated_stmt [ WHILE EOF ELSE ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 54
+
+State 54:
+expr -> expr . PLUS expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . TIMES expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . MINUS expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . DIVIDE expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+expr -> expr . INTE expr DEUP expr [ WHILE VAR TIMES PLUS NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE ACOPEN ]
+exprB -> expr . EQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . NEQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . LT expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . GT expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . LEQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+exprB -> expr . GEQ expr [ WHILE VAR TIMES PLUS OR NEQ MINUS LT LEQ INTE IF GT GEQ FOR EQ DO DIVIDE AND ACOPEN ]
+terminated_stmt -> IF expr . terminated_stmt ELSE terminated_stmt [ WHILE EOF ELSE ]
+terminated_stmt -> IF expr . terminated_stmt [ WHILE EOF ELSE ]
+-- On WHILE shift to state 1
+-- On VAR shift to state 49
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On IF shift to state 53
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On FOR shift to state 55
+-- On EQ shift to state 36
+-- On DO shift to state 57
+-- On DIVIDE shift to state 20
+-- On ACOPEN shift to state 58
+-- On terminated_stmt shift to state 87
+-- On loop shift to state 77
+-- On exprC shift to state 78
+-- On assignable shift to state 65
+
+State 55:
+terminated_stmt -> FOR . OPENP exprC PV expr PV exprC CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On OPENP shift to state 56
+
+State 56:
+terminated_stmt -> FOR OPENP . exprC PV expr PV exprC CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On VAR shift to state 49
+-- On DO shift to state 57
+-- On exprC shift to state 80
+-- On assignable shift to state 65
+
+State 57:
+exprC -> DO . terminated_stmt WHILE expr [ PV EOF CLOSEP ]
+-- On WHILE shift to state 1
+-- On VAR shift to state 49
+-- On IF shift to state 53
+-- On FOR shift to state 55
+-- On DO shift to state 57
+-- On ACOPEN shift to state 58
+-- On terminated_stmt shift to state 74
+-- On loop shift to state 77
+-- On exprC shift to state 78
+-- On assignable shift to state 65
+
+State 58:
+loop -> ACOPEN . stmts ACOFER [ WHILE EOF ELSE ]
+terminated_stmt -> ACOPEN . stmts ACOFER [ WHILE EOF ELSE ]
+-- On VAR shift to state 49
+-- On DO shift to state 57
+-- On stmts_inner shift to state 59
+-- On stmts shift to state 60
+-- On exprC shift to state 62
+-- On assignable shift to state 65
+-- On ACOFER reduce production stmts_inner -> 
+
+State 59:
+stmts -> stmts_inner . [ ACOFER ]
+-- On ACOFER reduce production stmts -> stmts_inner 
+
+State 60:
+loop -> ACOPEN stmts . ACOFER [ WHILE EOF ELSE ]
+terminated_stmt -> ACOPEN stmts . ACOFER [ WHILE EOF ELSE ]
+-- On ACOFER shift to state 61
+
+State 61:
+loop -> ACOPEN stmts ACOFER . [ WHILE EOF ELSE ]
+terminated_stmt -> ACOPEN stmts ACOFER . [ WHILE EOF ELSE ]
+-- On WHILE reduce production loop -> ACOPEN stmts ACOFER 
+-- On WHILE reduce production terminated_stmt -> ACOPEN stmts ACOFER 
+-- On EOF reduce production loop -> ACOPEN stmts ACOFER 
+-- On EOF reduce production terminated_stmt -> ACOPEN stmts ACOFER 
+-- On ELSE reduce production loop -> ACOPEN stmts ACOFER 
+-- On ELSE reduce production terminated_stmt -> ACOPEN stmts ACOFER 
+** Conflict on WHILE EOF ELSE
+
+State 62:
+stmts_inner -> exprC . PV stmts_inner [ ACOFER ]
+-- On PV shift to state 63
+
+State 63:
+stmts_inner -> exprC PV . stmts_inner [ ACOFER ]
+-- On VAR shift to state 49
+-- On DO shift to state 57
+-- On stmts_inner shift to state 64
+-- On exprC shift to state 62
+-- On assignable shift to state 65
+-- On ACOFER reduce production stmts_inner -> 
+
+State 64:
+stmts_inner -> exprC PV stmts_inner . [ ACOFER ]
+-- On ACOFER reduce production stmts_inner -> exprC PV stmts_inner 
+
+State 65:
+exprC -> assignable . ASSIGN expr [ PV EOF CLOSEP ]
+exprC -> assignable . PP [ PV EOF CLOSEP ]
+exprC -> assignable . PE expr [ PV EOF CLOSEP ]
+exprC -> assignable . ME expr [ PV EOF CLOSEP ]
+exprC -> assignable . MM [ PV EOF CLOSEP ]
+-- On PP shift to state 66
+-- On PE shift to state 67
+-- On MM shift to state 69
+-- On ME shift to state 70
+-- On ASSIGN shift to state 72
+
+State 66:
+exprC -> assignable PP . [ PV EOF CLOSEP ]
+-- On PV reduce production exprC -> assignable PP 
+-- On EOF reduce production exprC -> assignable PP 
+-- On CLOSEP reduce production exprC -> assignable PP 
+
+State 67:
+exprC -> assignable PE . expr [ PV EOF CLOSEP ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 68
+
+State 68:
+expr -> expr . PLUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . TIMES expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . MINUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . DIVIDE expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . INTE expr DEUP expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+exprB -> expr . EQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . NEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprC -> assignable PE expr . [ PV EOF CLOSEP ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On PV reduce production exprC -> assignable PE expr 
+-- On EOF reduce production exprC -> assignable PE expr 
+-- On CLOSEP reduce production exprC -> assignable PE expr 
+
+State 69:
+exprC -> assignable MM . [ PV EOF CLOSEP ]
+-- On PV reduce production exprC -> assignable MM 
+-- On EOF reduce production exprC -> assignable MM 
+-- On CLOSEP reduce production exprC -> assignable MM 
+
+State 70:
+exprC -> assignable ME . expr [ PV EOF CLOSEP ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 71
+
+State 71:
+expr -> expr . PLUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . TIMES expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . MINUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . DIVIDE expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . INTE expr DEUP expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+exprB -> expr . EQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . NEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprC -> assignable ME expr . [ PV EOF CLOSEP ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On PV reduce production exprC -> assignable ME expr 
+-- On EOF reduce production exprC -> assignable ME expr 
+-- On CLOSEP reduce production exprC -> assignable ME expr 
+
+State 72:
+exprC -> assignable ASSIGN . expr [ PV EOF CLOSEP ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 73
+
+State 73:
+expr -> expr . PLUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . TIMES expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . MINUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . DIVIDE expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . INTE expr DEUP expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+exprB -> expr . EQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . NEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprC -> assignable ASSIGN expr . [ PV EOF CLOSEP ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On PV reduce production exprC -> assignable ASSIGN expr 
+-- On EOF reduce production exprC -> assignable ASSIGN expr 
+-- On CLOSEP reduce production exprC -> assignable ASSIGN expr 
+
+State 74:
+exprC -> DO terminated_stmt . WHILE expr [ PV EOF CLOSEP ]
+-- On WHILE shift to state 75
+
+State 75:
+exprC -> DO terminated_stmt WHILE . expr [ PV EOF CLOSEP ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 76
+
+State 76:
+expr -> expr . PLUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . TIMES expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . MINUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . DIVIDE expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+expr -> expr . INTE expr DEUP expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP ]
+exprB -> expr . EQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . NEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . LEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprB -> expr . GEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE CLOSEP AND ]
+exprC -> DO terminated_stmt WHILE expr . [ PV EOF CLOSEP ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On PV reduce production exprC -> DO terminated_stmt WHILE expr 
+-- On EOF reduce production exprC -> DO terminated_stmt WHILE expr 
+-- On CLOSEP reduce production exprC -> DO terminated_stmt WHILE expr 
+
+State 77:
+terminated_stmt -> loop . [ WHILE EOF ELSE ]
+-- On WHILE reduce production terminated_stmt -> loop 
+-- On EOF reduce production terminated_stmt -> loop 
+-- On ELSE reduce production terminated_stmt -> loop 
+
+State 78:
+terminated_stmt -> exprC . PV [ WHILE EOF ELSE ]
+-- On PV shift to state 79
+
+State 79:
+terminated_stmt -> exprC PV . [ WHILE EOF ELSE ]
+-- On WHILE reduce production terminated_stmt -> exprC PV 
+-- On EOF reduce production terminated_stmt -> exprC PV 
+-- On ELSE reduce production terminated_stmt -> exprC PV 
+
+State 80:
+terminated_stmt -> FOR OPENP exprC . PV expr PV exprC CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On PV shift to state 81
+
+State 81:
+terminated_stmt -> FOR OPENP exprC PV . expr PV exprC CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 82
+
+State 82:
+expr -> expr . PLUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . TIMES expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . MINUS expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . DIVIDE expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+expr -> expr . INTE expr DEUP expr [ TIMES PV PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE ]
+exprB -> expr . EQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE AND ]
+exprB -> expr . NEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE AND ]
+exprB -> expr . LT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE AND ]
+exprB -> expr . GT expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE AND ]
+exprB -> expr . LEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE AND ]
+exprB -> expr . GEQ expr [ TIMES PV PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE AND ]
+terminated_stmt -> FOR OPENP exprC PV expr . PV exprC CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On TIMES shift to state 16
+-- On PV shift to state 83
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+
+State 83:
+terminated_stmt -> FOR OPENP exprC PV expr PV . exprC CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On VAR shift to state 49
+-- On DO shift to state 57
+-- On exprC shift to state 84
+-- On assignable shift to state 65
+
+State 84:
+terminated_stmt -> FOR OPENP exprC PV expr PV exprC . CLOSEP terminated_stmt [ WHILE EOF ELSE ]
+-- On CLOSEP shift to state 85
+
+State 85:
+terminated_stmt -> FOR OPENP exprC PV expr PV exprC CLOSEP . terminated_stmt [ WHILE EOF ELSE ]
+-- On WHILE shift to state 1
+-- On VAR shift to state 49
+-- On IF shift to state 53
+-- On FOR shift to state 55
+-- On DO shift to state 57
+-- On ACOPEN shift to state 58
+-- On terminated_stmt shift to state 86
+-- On loop shift to state 77
+-- On exprC shift to state 78
+-- On assignable shift to state 65
+
+State 86:
+terminated_stmt -> FOR OPENP exprC PV expr PV exprC CLOSEP terminated_stmt . [ WHILE EOF ELSE ]
+-- On WHILE reduce production terminated_stmt -> FOR OPENP exprC PV expr PV exprC CLOSEP terminated_stmt 
+-- On EOF reduce production terminated_stmt -> FOR OPENP exprC PV expr PV exprC CLOSEP terminated_stmt 
+-- On ELSE reduce production terminated_stmt -> FOR OPENP exprC PV expr PV exprC CLOSEP terminated_stmt 
+
+State 87:
+terminated_stmt -> IF expr terminated_stmt . ELSE terminated_stmt [ WHILE EOF ELSE ]
+terminated_stmt -> IF expr terminated_stmt . [ WHILE EOF ELSE ]
+-- On ELSE shift to state 88
+-- On WHILE reduce production terminated_stmt -> IF expr terminated_stmt 
+-- On EOF reduce production terminated_stmt -> IF expr terminated_stmt 
+-- On ELSE reduce production terminated_stmt -> IF expr terminated_stmt 
+** Conflict on ELSE
+
+State 88:
+terminated_stmt -> IF expr terminated_stmt ELSE . terminated_stmt [ WHILE EOF ELSE ]
+-- On WHILE shift to state 1
+-- On VAR shift to state 49
+-- On IF shift to state 53
+-- On FOR shift to state 55
+-- On DO shift to state 57
+-- On ACOPEN shift to state 58
+-- On terminated_stmt shift to state 89
+-- On loop shift to state 77
+-- On exprC shift to state 78
+-- On assignable shift to state 65
+
+State 89:
+terminated_stmt -> IF expr terminated_stmt ELSE terminated_stmt . [ WHILE EOF ELSE ]
+-- On WHILE reduce production terminated_stmt -> IF expr terminated_stmt ELSE terminated_stmt 
+-- On EOF reduce production terminated_stmt -> IF expr terminated_stmt ELSE terminated_stmt 
+-- On ELSE reduce production terminated_stmt -> IF expr terminated_stmt ELSE terminated_stmt 
+
+State 90:
+terminated_stmt -> WHILE expr terminated_stmt . [ WHILE EOF ELSE ]
+-- On WHILE reduce production terminated_stmt -> WHILE expr terminated_stmt 
+-- On EOF reduce production terminated_stmt -> WHILE expr terminated_stmt 
+-- On ELSE reduce production terminated_stmt -> WHILE expr terminated_stmt 
+
+State 91:
+assignable -> VAR . [ PP PE MM ME ASSIGN ]
+assignable -> VAR . OPEN expr CLOSE [ PP PE MM ME ASSIGN ]
+expr -> VAR . [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+expr -> VAR . OPEN expr CLOSE [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+-- On OPEN shift to state 92
+-- On TIMES reduce production expr -> VAR 
+-- On PP reduce production assignable -> VAR 
+-- On PLUS reduce production expr -> VAR 
+-- On PE reduce production assignable -> VAR 
+-- On NEQ reduce production expr -> VAR 
+-- On MM reduce production assignable -> VAR 
+-- On MINUS reduce production expr -> VAR 
+-- On ME reduce production assignable -> VAR 
+-- On LT reduce production expr -> VAR 
+-- On LEQ reduce production expr -> VAR 
+-- On INTE reduce production expr -> VAR 
+-- On GT reduce production expr -> VAR 
+-- On GEQ reduce production expr -> VAR 
+-- On EQ reduce production expr -> VAR 
+-- On EOF reduce production expr -> VAR 
+-- On DIVIDE reduce production expr -> VAR 
+-- On ASSIGN reduce production assignable -> VAR 
+
+State 92:
+assignable -> VAR OPEN . expr CLOSE [ PP PE MM ME ASSIGN ]
+expr -> VAR OPEN . expr CLOSE [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+-- On VAR shift to state 2
+-- On TRUE shift to state 4
+-- On STRING shift to state 5
+-- On OPENP shift to state 6
+-- On NOT shift to state 7
+-- On MINUS shift to state 8
+-- On INT shift to state 9
+-- On FLOAT shift to state 10
+-- On FALSE shift to state 11
+-- On exprB shift to state 12
+-- On expr shift to state 93
+
+State 93:
+assignable -> VAR OPEN expr . CLOSE [ PP PE MM ME ASSIGN ]
+expr -> expr . PLUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . TIMES expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . MINUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> expr . DIVIDE expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+expr -> VAR OPEN expr . CLOSE [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+expr -> expr . INTE expr DEUP expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE ]
+exprB -> expr . EQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . NEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . LT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . GT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . LEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+exprB -> expr . GEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ DIVIDE CLOSE AND ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On CLOSE shift to state 94
+
+State 94:
+assignable -> VAR OPEN expr CLOSE . [ PP PE MM ME ASSIGN ]
+expr -> VAR OPEN expr CLOSE . [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+-- On TIMES reduce production expr -> VAR OPEN expr CLOSE 
+-- On PP reduce production assignable -> VAR OPEN expr CLOSE 
+-- On PLUS reduce production expr -> VAR OPEN expr CLOSE 
+-- On PE reduce production assignable -> VAR OPEN expr CLOSE 
+-- On NEQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On MM reduce production assignable -> VAR OPEN expr CLOSE 
+-- On MINUS reduce production expr -> VAR OPEN expr CLOSE 
+-- On ME reduce production assignable -> VAR OPEN expr CLOSE 
+-- On LT reduce production expr -> VAR OPEN expr CLOSE 
+-- On LEQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On INTE reduce production expr -> VAR OPEN expr CLOSE 
+-- On GT reduce production expr -> VAR OPEN expr CLOSE 
+-- On GEQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On EQ reduce production expr -> VAR OPEN expr CLOSE 
+-- On EOF reduce production expr -> VAR OPEN expr CLOSE 
+-- On DIVIDE reduce production expr -> VAR OPEN expr CLOSE 
+-- On ASSIGN reduce production assignable -> VAR OPEN expr CLOSE 
+
+State 95:
+start2 -> terminated_stmt . [ EOF ]
+-- On EOF reduce production start2 -> terminated_stmt 
+
+State 96:
+start -> start2 . EOF [ # ]
+-- On EOF shift to state 97
+
+State 97:
+start -> start2 EOF . [ # ]
+-- On # reduce production start -> start2 EOF 
+
+State 98:
+start' -> start . [ # ]
+-- On # accept start
+
+State 99:
+start2 -> exprC . [ EOF ]
+terminated_stmt -> exprC . PV [ EOF ]
+-- On PV shift to state 79
+-- On EOF reduce production start2 -> exprC 
+
+State 100:
+expr -> expr . PLUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+expr -> expr . TIMES expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+expr -> expr . MINUS expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+expr -> expr . DIVIDE expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+expr -> expr . INTE expr DEUP expr [ TIMES PLUS NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE ]
+exprB -> expr . EQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE AND ]
+exprB -> expr . NEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE AND ]
+exprB -> expr . LT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE AND ]
+exprB -> expr . GT expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE AND ]
+exprB -> expr . LEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE AND ]
+exprB -> expr . GEQ expr [ TIMES PLUS OR NEQ MINUS LT LEQ INTE GT GEQ EQ EOF DIVIDE AND ]
+start2 -> expr . [ EOF ]
+-- On TIMES shift to state 16
+-- On PLUS shift to state 18
+-- On NEQ shift to state 22
+-- On MINUS shift to state 24
+-- On LT shift to state 26
+-- On LEQ shift to state 28
+-- On INTE shift to state 34
+-- On GT shift to state 30
+-- On GEQ shift to state 32
+-- On EQ shift to state 36
+-- On DIVIDE shift to state 20
+-- On EOF reduce production start2 -> expr 
+

@@ -1,27 +1,2 @@
 ### Starting build.
-# Target: arith.ml.depends, tags: { extension:ml, file:arith.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep -modules arith.ml > arith.ml.depends # cached
-# Target: arithAST.ml.depends, tags: { extension:ml, file:arithAST.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep -modules arithAST.ml > arithAST.ml.depends # cached
-# Target: helper.ml.depends, tags: { extension:ml, file:helper.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep -modules helper.ml > helper.ml.depends # cached
-# Target: helper.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:helper.cmo, file:helper.ml, implem, ocaml, quiet }
-/usr/bin/ocamlc -c -g -o helper.cmo helper.ml # cached
-# Target: arithAST.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:arithAST.cmo, file:arithAST.ml, implem, ocaml, quiet }
-/usr/bin/ocamlc -c -g -o arithAST.cmo arithAST.ml # cached
-# Target: arithlex.mll, tags: { extension:mll, file:arithlex.mll, lexer, ocaml, ocamllex, quiet }
-/usr/bin/ocamllex -q arithlex.mll # cached
-# Target: arithlex.ml.depends, tags: { extension:ml, file:arithlex.ml, ocaml, ocamldep, quiet }
-/usr/bin/ocamldep -modules arithlex.ml > arithlex.ml.depends # cached
-# Target: arithpar.mly.depends, tags: { extension:mly, file:arithpar.mly, menhir_ocamldep, ocaml, ocamldep, quiet }
-/usr/bin/menhir --raw-depend --ocamldep '/usr/bin/ocamldep -modules' arithpar.mly > arithpar.mly.depends
-+ /usr/bin/menhir --raw-depend --ocamldep '/usr/bin/ocamldep -modules' arithpar.mly > arithpar.mly.depends
-<<<<<<< HEAD
-File "arithpar.mly", line 64, characters 4-15:
-Error: stmts_inner is undefined.
-=======
-File "arithpar.mly", line 47, characters 4-8:
-Error: stmt is undefined.
->>>>>>> 93564d52360c32d17b50af30dc2bc1280080edc9
-Command exited with code 1.
 # Compilation unsuccessful.

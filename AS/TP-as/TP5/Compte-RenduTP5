@@ -5,66 +5,77 @@ Pierre	Wargnier
 1)
 
 arithAST:
-  | True
-  | False
+  | Stmts of t list
 
-  | True -> Dot.N ("#t", [])
-  | False -> Dot.N ("#f", [])
+  | Stmts l -> Dot.N("<stmts>",map dot l)
 
 arithlex:
-|"true" 		{ TRUE }
-|"false" 		{ FALSE }
+|";"			{ PV }
 
 
 arithpar:
-| l=expr EQ r=expr    { Bin (Equal, l, r) }
-| l=expr NEQ r=expr   { Bin (Different, l, r) }
-| l=expr LT r=expr   { Bin (LessThan, l, r) }
-| l=expr GT r=expr  { Bin (GreaterThan, l, r) }
-| l=expr LEQ r=expr    { Bin (LessThanEq, l, r) }
-| l=expr GEQ r=expr   { Bin (GreaterThanEq, l, r) }
-| l=exprB AND r=exprB   { Bin (And, l, r) }
-| l=exprB OR r=exprB  { Bin (Or, l, r) }
-| TRUE			{True}
-| FALSE			{False}
+start2:
+|stmts {$1}
+|assign {$1}
+|expr {$1}
+|exprB {$1}
 
+stmts:
+| l=stmts_inner {Stmts l}
+
+stmts_inner:{ [] } | s=stmt FINAL ss=stmts_inner { s::ss }
 2)
 
-arithAST:
-  | Index of string * t
-
-  | Index (id,x) -> Dot.N (id^"[.]", [dot x])
-
 arithlex:
-|"["			{ OPEN }
-|"]"			{ CLOSE }
+| "++"                  { PP }
+| "--"                  { MM }
+| "+="                  { PE }
+| "-="                  { ME }
 
 arithpar:
-%token OPEN CLOSE
-
-start: deb EOF { $1 } /* YACC-style indexing $1, $2, etc */
-
-deb:
-|expr {$1}
-|exprC {$1}
-
 exprC:
-|v=VAR OPEN t=expr CLOSE {Index(v,t) }
+| id=assignable PP	 		{ Assign (id,Bin (Plus, id,Int 1))}
+| id=assignable PE	t=expr 	{ Assign (id,Bin (Plus, id, t))}
+| id=assignable ME  t=expr 	{ Assign (id,Bin (Minus, id,  t))}
+| id=assignable MM		 	{ Assign (id,Bin (Minus, id, Int 1))}
 
 3)
 arithlex:
-|"("			{ OPENP }
-|")"			{ CLOSEP}
+| "{"                   { ACOPEN }
+| "}"                   { ACOCLO }
 
 arithpar:
-%token OPENP CLOSEP
+%token ACOPEN ACOCLO
 
-expr:
-| OPENP	t=expr CLOSEP	{t}
+loop:
+| ACOPEN s=stmts ACOCLO     { s }
+
+terminated_stmt: 
+| p=loop                                    { p }
+| s=stmt PV 								{ s }
+| ACOPEN s=stmts ACOCLO							{ s }
 
 4)
+arithAST:
+  | While of t * t
 
+  | While (l,r) -> Dot.N("While",[dot l; dot r])
 
+arithlex:
+| "while"		{ WHILE }
+
+arithpar:
+%token WHILE
+
+terminated_stmt: 
+| b=loop                                    { b }
+| s=exprC PV 								{ s }
+| WHILE r=expr t=terminated_stmt { While(r,t) }
+
+start2:
+| expr { $1 }
+| exprC { $1 }
+| terminated_stmt { $1 }
 
 
 
