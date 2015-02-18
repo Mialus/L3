@@ -1,0 +1,30 @@
+Lookahead token is now FL (0-5)
+State 0:
+Shifting (FL) to state 108
+State 108:
+Lookahead token is now VAR (6-8)
+Shifting (VAR) to state 62
+State 62:
+Lookahead token is now PV (8-9)
+Reducing production assignable -> VAR 
+State 113:
+Reducing production exprD -> assignable 
+State 110:
+Shifting (PV) to state 111
+State 111:
+Lookahead token is now EOF (10-10)
+Reducing production int_inner -> 
+State 112:
+Reducing production int_inner -> exprD PV int_inner 
+State 109:
+Reducing production createInt -> int_inner 
+State 117:
+Reducing production declare -> FL createInt 
+State 126:
+Reducing production start2 -> declare 
+State 121:
+Shifting (EOF) to state 122
+State 122:
+Reducing production start -> start2 EOF 
+State 123:
+Accepting

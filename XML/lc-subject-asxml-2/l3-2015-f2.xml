@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE operas SYSTEM "operas.dtd">
+
+<operas>
+  <works>
+<!-- On ajoute les adapations que l'on connait-->
+    <opera music="mussorgsky" text="mussorgsky" year="1869" adapt="DrameEponyme" auteurAd="Alexandre Pouchkine">
+      <title>Boris Godunov</title>
+    </opera>
+    <opera music="wagner" text="wagner" year="1876">
+      <title>Götterdämmerung</title>
+      </opera>
+<!-- gile n'est pas gile-->
+    <opera music="delibes" text="gondinet" year="1883">
+      <title>Lakmé</title>
+    </opera>
+    <opera music="reimann" text="henneberg" year="1978" adapt="King Lear" auteurAd="William Shakespeare">
+      <title>Lear</title>
+    </opera>
+    <opera music="berg" text="berg" year="1979"><title>Lulu</title></opera>
+    <opera music="britten" text="shakespeare" year="1960">
+      <title>A Midsummer Night's Dream</title>
+    </opera>
+    <opera music="schoenberg" text="schoenberg" year="1951">
+      <title>Moses und Aron</title>
+    </opera>
+    <opera music="wagner" text="wagner" year="1876">
+      <title>Siegfried</title>
+    </opera>
+    <opera music="zimmermann" text="zimmermann" year="1965">
+      <title>Die Soldaten</title>
+    </opera>
+    <opera music="mozart" text="schikaneder" year="1791">
+      <title>Die Zauberflöte</title>
+    </opera>
+  </works>
+  <people>
+    <person id="berg" firstname="Alban" lastname="Berg" born="1885"
+            dead="1935"/>
+    <person id="britten" firstname="Benjamin" lastname="Britten" born="1913"
+            dead="1976"/>
+    <person id="delibes" firstname="Léo" lastname="Delibes" born="1836"
+            dead="1891"/>
+    <person id="gondinet" firstname="Edmond" lastname="Gondinet" born="1828"
+            dead="1888"/>
+    <person id="henneberg" firstname="Claus H." lastname="Henneberg"
+            born="1936" dead="1998"/>
+    <person id="mozart" firstname="Wolfgang Amadeus" lastname="Mozart"
+            born="1756" dead="1791"/>
+    <person id="mussorgsky" firstname="Modest Petrovich" lastname="Mussorgsky"
+            born="1839" dead="1881"/>
+    <person id="reimann" firstname="Aribert" lastname="Reimann" born="1936"/>
+    <person id="schikaneder" firstname="Emanuel" lastname="Schikaneder"
+            born="1751" dead="1812"/>
+    <person id="schoenberg" firstname="Arnold" lastname="Schoenberg"
+            born="1874" dead="1951"/>
+    <person id="shakespeare" firstname="William" lastname="Shakespeare"
+            born="1542" dead="1616"/>
+    <person id="wagner" firstname="Richard" lastname="Wagner" born="1813"
+            dead="1883"/>
+    <person id="zimmermann" firstname="Bernd Alois" lastname="Zimmermann"
+            born="1918" dead="1970"/>
+  </people>
+</operas>

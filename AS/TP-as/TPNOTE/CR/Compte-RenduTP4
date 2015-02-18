@@ -1,0 +1,113 @@
+Pierre	Wargnier
+
+				TP4
+
+1)
+
+arithAST:
+  | True
+  | False
+
+  | True -> Dot.N ("#t", [])
+  | False -> Dot.N ("#f", [])
+
+arithlex:
+|"true" 		{ TRUE }
+|"false" 		{ FALSE }
+
+
+arithpar:
+| l=expr EQ r=expr    { Bin (Equal, l, r) }
+| l=expr NEQ r=expr   { Bin (Different, l, r) }
+| l=expr LT r=expr   { Bin (LessThan, l, r) }
+| l=expr GT r=expr  { Bin (GreaterThan, l, r) }
+| l=expr LEQ r=expr    { Bin (LessThanEq, l, r) }
+| l=expr GEQ r=expr   { Bin (GreaterThanEq, l, r) }
+| l=exprB AND r=exprB   { Bin (And, l, r) }
+| l=exprB OR r=exprB  { Bin (Or, l, r) }
+| TRUE			{True}
+| FALSE			{False}
+
+2)
+
+arithAST:
+  | Index of string * t
+
+  | Index (id,x) -> Dot.N (id^"[.]", [dot x])
+
+arithlex:
+|"["			{ OPEN }
+|"]"			{ CLOSE }
+
+arithpar:
+%token OPEN CLOSE
+
+start: deb EOF { $1 } /* YACC-style indexing $1, $2, etc */
+
+deb:
+|expr {$1}
+|exprC {$1}
+
+exprC:
+|v=VAR OPEN t=expr CLOSE {Index(v,t) }
+
+3)
+arithlex:
+|"("			{ OPENP }
+|")"			{ CLOSEP}
+
+arithpar:
+%token OPENP CLOSEP
+
+expr:
+| OPENP	t=expr CLOSEP	{t}
+
+4)
+arithAST:
+  | Assign of t * t
+
+  | Assign(l,r) -> Dot.N(":=", [dot 1; dot r])
+
+arithlex:
+|":="			{ ASSIGN }
+
+arithpar:
+%token EOF ASSIGN
+start: deb EOF { $1 } /* YACC-style indexing $1, $2, etc */
+
+deb:
+|expr {$1}
+|affect {$1}
+
+
+affect:
+|a=assignable ASSIGN t=expr	{ASSIGN (a, t)}
+
+expr:
+|a=assignable		{ a }
+
+assignable:
+|v=exprC{ v }
+|v=VAR { v }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

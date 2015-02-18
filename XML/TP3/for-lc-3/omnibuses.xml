@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<books series="Doc Savage">
+  <omnibus>
+    <author>
+      <name>
+        <personname><first>Kenneth</first><last>Robeson</last></personname>
+      </name>
+    </author>
+    <booktitle>Doc Savage Omnibus #9</booktitle>
+    <year>1989</year>
+    <story><title>The Invisible-Box Murders</title><year>1941</year></story>
+    <story><title>Birds of  Death</title><year>1941</year></story>
+    <story><title>The Wee Ones</title><year>1945</year></story>
+    <story><title>Terror Takes 7</title><year>1945</year></story>
+  </omnibus>
+  <omnibus>
+    <author>
+      <name>
+        <personname><first>Kenneth</first><last>Robeson</last></personname>
+      </name>
+    </author>
+    <booktitle>Doc Savage Omnibus #10</booktitle>
+    <year>1989</year>
+    <story><title>The Devil's Black Rock</title><year>1942</year></story>
+    <story><title>Waves of Death</title><year>1943</year></story>
+    <story><title>The Too-Wise Owl</title><year>1942</year></story>
+    <story><title>Terror and the Lonely Widow</title><year>1945</year></story>
+  </omnibus>
+</books>

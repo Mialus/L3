@@ -1,0 +1,62 @@
+Pierre	Wargnier
+
+				TP Noté
+
+1)
+
+arithAST:
+  | EntVal of t * t 
+  | EntValU of t
+
+  | EntVal (l,m) -> Dot.N ("int", [dot l; dot m])
+  | EntValU (l) -> Dot.N ("int", [dot l])
+
+arithlex:
+| "int"			{ ENT } 
+
+
+arithpar:
+%token ENT
+
+start2:
+| expr { $1 }
+| exprC { $1 }
+| terminated_stmt { $1 }
+| declare {$1}
+
+declare:
+| ENT a=createInt {a}
+
+
+createInt:
+|c=int_inner { Stmts c }
+
+int_inner:
+| { [] } 
+| s=exprD PV ss=int_inner { s::ss }
+| s=exprD ss=int_inner { s::ss }
+
+exprD:
+| a=assignable ASSIGN b=expr 	{ EntVal(a,b)}
+| a=assignable {EntValU(a) }
+
+2)
+arithlex:
+| "float"			{ FL } 
+
+
+arithpar:
+%token FL VIR 
+
+declare:
+| ENT a=createInt {a}
+(*| FL b=createFloat {b}
+
+createFloat:
+|c=float_inner { Stmts c }
+
+float_inner:
+| { [] }
+| s=exprD VIR ss=createFloat { s::ss }
+| s=exprD PV ss=int_inner { s::ss }
+| s=exprD ss=int_inner { s::ss }*)

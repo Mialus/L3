@@ -1,0 +1,87 @@
+Pierre	Wargnier
+
+				TP6
+
+1)
+
+arithAST:
+  | For of t * t * t * t
+
+  | For (s,b,t,ter) -> Dot.N("for",[dot s; dot b; dot t; dot ter])
+
+arithlex:
+| "for"			{ FOR }
+
+
+arithpar:
+%token FOR
+| FOR OPENP u=exprC PV e=expr PV u=exprC CLOSEP t=terminated_stmt { For(u,e,u,t) }
+
+2)
+
+arithAST:
+  | Do of t * t
+
+  | Do  (s,b)  -> Dot.N("do",[dot s; dot b])
+
+arithlex:
+| "do"			{ DO }
+
+
+arithpar:
+%token DO
+| DO t=terminated_stmt WHILE e=expr { Do(t,e) }
+
+3 4 et 5) mais ne marche pas
+arithAST:
+  | If of t * t
+  | IfElse of t * t * t
+  | Tern of t * t * t
+
+  | If (b,ter) -> Dot.N("if", [dot b; dot ter])
+  | IfElse (l,m,r) -> Dot.N ("if else", [dot l; dot m; dot r])
+  | Tern (l,m,r) -> Dot.N ( "?",[ dot l; dot m; dot r])
+
+arithlex:
+| "if"                  { IF }
+| "else"                { ELSE }
+| ":"                   { DEUP }
+| "?"                   { INTE }
+
+arithpar:
+%token EOF
+  PLUS TIMES MINUS DIVIDE TRUE FALSE
+  NEQ EQ LEQ GEQ LT GT WHILE FOR DO PE MM ME PP IF ELSE DEUP INTE 
+  AND OR NOT CLOSEP OPENP OPEN CLOSE ASSIGN  PV ACOPEN ACOFER
+
+%left INTE pour la précédence
+loop:
+| ACOPEN s=stmts ACOCLO     { s }
+
+terminated_stmt: 
+| p=loop                                    { p }
+| s=stmt PV 								{ s }
+| ACOPEN s=stmts ACOCLO							{ s }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT operas    (works,people)>
+<!ELEMENT works     (opera*)>
+<!ELEMENT opera     (title)>
+<!ATTLIST opera     music  IDREF  #REQUIRED
+                    text   IDREFS #REQUIRED
+                    year   CDATA  #REQUIRED
+		    adapt CDATA #IMPLIED
+		    auteurAd CDATA #IMPLIED>
+<!ELEMENT title     (#PCDATA)>
+<!ELEMENT people    (person*)>
+<!ELEMENT person  EMPTY>
+<!-- personne => person -->
+<!ATTLIST person  id         ID    #REQUIRED
+                    firstname  CDATA #REQUIRED
+                    lastname   CDATA #REQUIRED
+                    born       CDATA #REQUIRED
+                    dead       CDATA #IMPLIED>
