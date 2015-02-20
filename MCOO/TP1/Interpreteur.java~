@@ -14,7 +14,7 @@ public class Interpreteur implements ExprVisiteur{
     
     public void visit(Repertoire r){
         if(r.getParent()!=null){
-            testPar(r.getParent());
+	
             System.out.print("|__");
         }
         if(r.enf.isEmpty()){

@@ -22,7 +22,7 @@ public void setNom(String nom){
 public void setTaille(int t){
 }
 
-public abstract Noeud getParent();
+public Noeud getParent(){}
 public abstract void accept(ExprVisiteur v);
 
 

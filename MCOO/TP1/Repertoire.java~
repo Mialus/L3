@@ -30,7 +30,7 @@ public void addNoeud(Noeud n){
 }
 
     @Override
-    public void accept(ExprVisiteur v) {
+    public void accept() {
         v.visit(this);
     }
     public Repertoire getParent() {
@@ -38,7 +38,7 @@ public void addNoeud(Noeud n){
     }
 
     @Override
-    public int accept2(ExprVisiteur2 ev) {
+    public int accept2() {
                 return ev.visit(this);
     }
 

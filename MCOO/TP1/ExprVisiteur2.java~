@@ -9,8 +9,7 @@
  *
  * @author Gabriel
  */
-public interface ExprVisiteur {
-public abstract void visit(Repertoire r);
-public abstract void visit(Fichier f);
-} 
-
+public interface ExprVisiteur2 {
+public abstract int visit(Repertoire r);
+public abstract int visit(Fichier f);
+}

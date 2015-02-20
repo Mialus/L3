@@ -18,8 +18,7 @@ public class Interpreteur2 implements ExprVisiteur2{
             if(enf1 instanceof Repertoire){
                 Repertoire rep = (Repertoire) enf1;
                 val += visit(rep);
-            }
-	    if(enf1 instanceof Fichier){
+            }else{
                 Fichier fic = (Fichier) enf1;
                 val += visit(fic);
             }

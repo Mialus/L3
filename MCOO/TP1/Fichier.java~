@@ -14,6 +14,7 @@ public Fichier(String nom,int t,Repertoire r){
 m_nom=nom;
 m_taille=t;
 parent=r;
+r.addNoeud(this);
 }
 
     public int getTaille() {

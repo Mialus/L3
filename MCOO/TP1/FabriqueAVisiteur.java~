@@ -4,13 +4,17 @@
  * and open the template in the editor.
  */
 
-
 /**
  *
  * @author Gabriel
  */
-public interface ExprVisiteur {
-public abstract void visit(Repertoire r);
-public abstract void visit(Fichier f);
-} 
-
+public class FabriqueAVisiteur {
+    
+    public void afficheVisiteur(Noeud c){
+        c.accept();
+    }
+    
+    public int afficheVisiteur2(Noeud c){
+        return c.accept2();
+    }
+}
