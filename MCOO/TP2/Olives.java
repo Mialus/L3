@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Gabriel
  */
-public class FabriqueAVisiteur {
-    
-    public void afficheVisiteur(Noeud c){
-        c.accept();
-    }
-    
-    public int afficheVisiteur2(Noeud c){
-        return c.accept2();
+public class Olives extends Garniture{
+        public Olives(){
+        super("Olives");
     }
 }

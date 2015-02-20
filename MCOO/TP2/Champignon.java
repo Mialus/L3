@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mcootp1;
 
 /**
  *
  * @author Gabriel
  */
-public interface ExprVisiteur {
-public abstract void visit(Repertoire r);
-public abstract void visit(Fichier f);
-} 
-
+public class Champignon extends Garniture{
+    
+        public Champignon(){
+        super("Champignon");
+    }
+}

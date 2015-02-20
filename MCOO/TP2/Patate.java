@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 
-
 /**
  *
  * @author Gabriel
  */
-public interface ExprVisiteur2 {
-public abstract int visit(Repertoire r);
-public abstract int visit(Fichier f);
+public class Patate extends Garniture{
+    
+        public Patate(){
+        super("Pomme de Terre");
+    }
 }

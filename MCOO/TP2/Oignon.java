@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.util.*;
+
 /**
  *
  * @author Gabriel
  */
-public class FabriqueAPizza {
+public class Oignon extends Garniture{
     
-     public Pizza creerPizza(ArrayList<String> ing){
-     Pizza p=new Garniture(ing);
-     
-     return p;
-     }
+        public Oignon(){
+        super("Oigon");
+    }
 }
