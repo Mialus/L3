@@ -1,15 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package mcootp1;
+
+/**
+ *
+ * @author Gabriel
+ */
 import java.util.*;
 
-public class Repertoire extends Noeud{
-private List<Noeud> enf = new ArrayList<>();
-private int taille=4096;
+public class Repertoire extends Noeud implements Expr{
+public List<Noeud> enf = new ArrayList<>();
 
 public Repertoire(String nom){
 m_nom=nom;
-}
-
-public void setNom(String nom){
-m_nom=nom;
+m_taille=4096;
 }
 
 public void delNoeud(int index){
@@ -20,12 +27,21 @@ public void delNoeud(int index){
 public void addNoeud(Noeud n){
 
 	enf.add(n);
+        n.parent=this;
 }
 
-public Object accept(VisiteurNoeud v){
+    @Override
+    public void accept(ExprVisiteur v) {
+        v.visit(this);
+    }
+    public Repertoire getParent() {
+        return parent;
+    }
 
-	return v;
+    @Override
+    public int accept2(ExprVisiteur2 ev) {
+                return ev.visit(this);
+    }
 
 }
 
-}
