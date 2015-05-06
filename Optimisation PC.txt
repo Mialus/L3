@@ -1,0 +1,154 @@
+• Accélérer votre connexion et baisser votre Ping 
+
+Si vous voulez choisir vous-même votre serveur dns, voilà un petit tuto :
+http://www.republic-of-gamers.fr/Forum/entry.php?38287-Acc%E9l%E9rer-votre-connexion-et-baisser-votre-Ping-avec-DNS-Benchmark
+sinon :
+
+Ouvrir l'invite de commande (CMD) en tant qu'administrateur puis tapez:
+
+cmd :cd/
+cmd :dir/s ( un petit nettoyage au passage ^^ )
+cmd :ipconfig/flushdns
+
+Panneau de configuration\Réseau et Internet\Centre Réseau et partage
+Etat connexion ( vous l'optenez en cliquant sur le nom de votre connexion dans le centre de réseau)
+propriété
+décocher planificateur Qos
+cliquer sur protocole internet version 4 (TCP/IPv4)
+serveur dns ( je donne google par défaut, souvent le meilleur :) )
+préféré : 8.8.8.8
+auxiliaire : 8.8.4.4
+
+(Pour revenir à la normale recocher le planificateur et remettez les paramètres de DNS automatique.)
+( Pour Free, si des ralentissments sont constatés, revenez aux paramètres par défaut :) )
+
+
+
+• Améliorer connexion et performances via invite de commandes : 
+
+Ouvrir l'invite de commande (CMD) en tant qu'administrateur puis tapez:
+
+1- netsh int tcp show global
+2- netsh int tcp set global chimney=enabled
+3- netsh int tcp set global autotuninglevel=restricted
+4- netsh int tcp set global congestionprovider=ctcp (windows 7) ou set supplemental congestionprovider=ctcp (windows 8)
+5- netsh int tcp show global ( pour constater les changements )
+
+Revenir a la normale:
+
+=> netsh int tcp set global chimney=automatic
+=> netsh int tcp set global autotuning=normal
+=> netsh int tcp set global congestionprovider=none
+
+
+
+• Forcer Windows à utiliser toute la RAM:
+
+Pour que vos applications utilisent les performances maximum de votre RAM et tournent plus rapidement (je le rappelle, la RAM est largement plus rapide que la mémoire virtuelle), il faut aller modifier le fichier system.ini.
+
+Cliquez sur Démarrer, rechercher puis tapez system.ini.
+ou
+windows+r, puis tapez system.ini.
+
+Repérez ensuite la section [386enh] et ajoutez y cette ligne : ConservativeSwapfileUsage=1.
+
+Sauvegardez le fichier puis quittez le bloc-notes.
+
+Le fichier .ini que vous allez modifier se trouve dans:
+C:\ (ou D:\ généralement) puis Windows. Pensez bien à lancer le bloc note en administrateur !  
+
+(Pour revenir à la normale il suffit de supprimer la ligne et d'enregistrer)
+
+
+
+• Désactivez les compteurs de performances (truc bien inutile )
+
+Tapez "diskperf -N" dans le cmd. (faire "diskperf -Y" pour revenir à la normale)
+
+
+
+• Optimiser FIREFOX : http://www.vulgarisation-informatique.com/article-617--accelerer-affichage-firefox.php
+
+Il y a une grande différence entre Internet Explorer et Mozilla Firefox ! Ce sont certes deux navigateurs, mais globalement la rapidité d'affichage est meilleure sur Mozilla Firefox que sur son concurrent.
+
+Vous pouvez néanmoins optimiser cette rapidité d'affichage via quelques réglages.
+
+Dans la barre d'adresse du navigateur Firefox tapez  >>  about:config et puis validez.
+
+Recherchez ensuite (sous Fitre)  les valeurs suivantes.( si la valeur est false, changez la valeur en true)
+
+network.dns.disableIPv6 => true
+
+network.http.pipelining => true
+
+network.http.pipelining.maxrequests => 8
+
+network.http.proxy.pipelining => true
+
+Une fois ceci fait, choisir une nouvelle entrée.
+Effectuez un clic droite sur un espace vide de votre page d'acceuil.
+Effectuez un clic sur Nouvelle, pour certaines versions (Valeur Numérique) pour les plus récentes (Nombre entier).
+
+Introduisez ceci >  nglayout.initialpaint.delay un clic sur Ok puis donnez-lui la valeur 0.
+Redémarrez Firefox pour appliquer les changements effectués.
+• Optimiser CHROME : 
+
+Dans la barre d'adresses tapez " chrome://flags/ "
+
+=> Activer composition graphique toutes les pages.
+=> Activer la DESACTIVATION du rendu différé du canvas 2D
+
+(Pour revenir à la normale faite l'inverse)
+
+• Accélérer le démarrage de Windows:
+Avec regedit :
+
+HKEY_LOCAL_MACHINE > SOFTWARE > Microsoft > Dfrg
+
+Une fois sur "Dfrg" créez une valeur " Chaîne extensible " que vous allez nommer  “Optimizecomplete”. Modifier la valeur ajouté et mettez "No" puis valider.
+
+
+
+• Fermeture plus rapide des applications quand le PC s'arrête:
+
+HKEY_LOCAL_MACHINE > SYSTEM > CurrentControlSet > Control
+
+Modifier la valeur "WaitToKillServiceTimeOut" et mettez le délais que vous voulez (en décimal). Pour ma part j'ai choisi 8000ms soit 8 secondes.
+
+
+
+• Baisser son ping ( toujours et encore ! ):
+
+1-  HKEY_LOCAL_MACHINE > SYSTEM > CurrentControlSet > Services > Tcpip > Parameters > Interfaces
+
+Ici vous aurez plusieurs dossiers avec des noms chelous (il peut y en avoir 2 comme il peut y en avoir 6), dans chacun d'entre eux créez la valeur DWORD 32bits " TcpAckFrequency " et vous lui donner la valeur "1" en héxadécimal.
+
+
+2- HKEY_LOCAL_MACHINE > SOFTWARE > Microsoft > MSMQ > Parameters
+
+SI MSMQ EST VIDE créez la clé " Parameters ". Une fois la clé créé il vous suffit de créer la valeur DWORD 32 bits " TCPNoDelay " et lui donner la valeur "1" en héxadécimal.
+
+
+
+• Libérer de la mémoire vive des que vous fermez une application:
+
+HKEY_CURRENT_USER\Control Panel\Desktop
+
+Clique sur Desktop puis dans le tableau créer la valeur chaine " HungAppTimeout ".
+Cliquer sur " HungAppTimeout " mettez 3000 puis OK (ceci va vous permettre de réduire le délais pour diminuer la mémoire vive après fermeture d'une application).
+
+
+
+
+• Séries d'astuces pour optimiser votre ordinateur : http://www.vulgarisation-informatique.com/optimisation-pc.php
+
+Mais aussi : http://www.titotuto.fr/comment-optimiser-son-pc-via-regedit
+
+Ou encore : http://www.pcastuces.com/pdf/pcastuces.pdf
+
+
+
+• Sauvegarde base de registres: http://www.commentcamarche.net/faq/363-sauvegarde-de-la-base-de-registre
+
+Désactivé la mise en veille prolongé :
+	cmd en admin : powercfg -h off
