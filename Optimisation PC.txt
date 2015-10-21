@@ -7,7 +7,7 @@ sinon :
 Ouvrir l'invite de commande (CMD) en tant qu'administrateur puis tapez:
 
 cmd :cd/
-cmd :dir/s ( un petit nettoyage au passage ^^ )
+cmd :dir/s
 cmd :ipconfig/flushdns
 
 Panneau de configuration\Réseau et Internet\Centre Réseau et partage
@@ -15,7 +15,7 @@ Etat connexion ( vous l'optenez en cliquant sur le nom de votre connexion dans l
 propriété
 décocher planificateur Qos
 cliquer sur protocole internet version 4 (TCP/IPv4)
-serveur dns ( je donne google par défaut, souvent le meilleur :) )
+serveur dns ( je donne google par défaut )
 préféré : 8.8.8.8
 auxiliaire : 8.8.4.4
 
@@ -42,7 +42,7 @@ Revenir a la normale:
 
 
 
-• Forcer Windows à utiliser toute la RAM:
+• Forcer Windows à utiliser toute la RAM (pour utilisateur avertis):
 
 Pour que vos applications utilisent les performances maximum de votre RAM et tournent plus rapidement (je le rappelle, la RAM est largement plus rapide que la mémoire virtuelle), il faut aller modifier le fichier system.ini.
 
@@ -61,7 +61,7 @@ C:\ (ou D:\ généralement) puis Windows. Pensez bien à lancer le bloc note en adm
 
 
 
-• Désactivez les compteurs de performances (truc bien inutile )
+• Désactivez les compteurs de performances (truc bien inutile)
 
 Tapez "diskperf -N" dans le cmd. (faire "diskperf -Y" pour revenir à la normale)
 

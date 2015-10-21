@@ -1,9 +1,0 @@
-dechiffrement(cle%26)
-while ((i = fgetc(f)) != EOF) {
-if((taille_mem[i]>=65)&&(taille_mem[i]<91))
-	{
-	taille_mem[i]=((taille_mem[i]-65)+indice)%26+65;
-	}
-	}
-	fputc(i,fsortie);
-}
